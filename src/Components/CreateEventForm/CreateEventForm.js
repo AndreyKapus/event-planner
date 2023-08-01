@@ -51,6 +51,7 @@ const CreateEventForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const event = {title, description, date, time, location, category, picture, priority}
+        // window.localStorage.setItem('event', JSON.stringify(event))
         add(event)
     }
 

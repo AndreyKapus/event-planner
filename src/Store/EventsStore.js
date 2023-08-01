@@ -1,8 +1,8 @@
 import { create } from 'zustand'
 import { v4 as uuidv4 } from 'uuid';
-import {persist, devtools} from 'zustand/middleware'
+import {devtools, persist, createJSONStorage} from 'zustand/middleware'
 
-export const useEvents = create(devtools((set, get) => ({
+export const useEvents = create(devtools(persist((set, get) => ({
     events: [
         {
             id: 'w',
@@ -29,7 +29,11 @@ export const useEvents = create(devtools((set, get) => ({
             addPicture: picture,
             priority: priority,
         };
-       return { events: [...state.events, newEvent] }
-    })
 
-})))
+       return { events: [...state.events, newEvent] }
+    }),
+}),
+{
+    name: 'events-storage', // name of the item in the storage (must be unique)
+    storage: createJSONStorage(() => localStorage), // (optional) by default, 'localStorage' is used
+  })))
