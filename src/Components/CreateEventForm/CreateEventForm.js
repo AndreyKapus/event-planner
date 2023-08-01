@@ -2,17 +2,6 @@ import { useState } from "react";
 import { useEvents } from "../../Store/EventsStore";
 
 
-// const initialState = {
-//     title: '',
-//     description: '',
-//     date: '',
-//     time: '',
-//     location: '',
-//     category: '',
-//     picture: '',
-//     priority: '',
-// }
-
 const CreateEventForm = () => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('')
@@ -24,7 +13,7 @@ const CreateEventForm = () => {
     const [priority, setPriority] = useState('')
     // const [createEvent, setCreateEvent] = useState({initialState});
 
-    const addEvent = useEvents((state) => state.addEvent);
+    const add = useEvents((state) => state.addEvent);
 
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -62,7 +51,7 @@ const CreateEventForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const event = {title, description, date, time, location, category, picture, priority}
-        addEvent(event)
+        add(event)
     }
 
     return(
@@ -107,3 +96,15 @@ const CreateEventForm = () => {
 };
 
 export default CreateEventForm;
+
+
+// const initialState = {
+//     title: '',
+//     description: '',
+//     date: '',
+//     time: '',
+//     location: '',
+//     category: '',
+//     picture: '',
+//     priority: '',
+// }

@@ -1,8 +1,8 @@
 import { create } from 'zustand'
 import { v4 as uuidv4 } from 'uuid';
-// import {persist} from 'zustand/middleware'
+import {persist, devtools} from 'zustand/middleware'
 
-export const useEvents = create((set, get)=> ({
+export const useEvents = create(devtools((set, get) => ({
     events: [
         {
             id: 'w',
@@ -28,7 +28,8 @@ export const useEvents = create((set, get)=> ({
             category: category,
             addPicture: picture,
             priority: priority,
-        }
-        return {events: [...state.events, newEvent]}
+        };
+       return { events: [...state.events, newEvent] }
     })
-}))
+
+})))

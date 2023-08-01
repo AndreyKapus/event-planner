@@ -2,7 +2,7 @@ import {useEvents} from '../../Store/EventsStore.js'
 
 const EventsList = () => {
     const events = useEvents(state => state.events)
-    console.log(events)
+    // console.log(events)
     return (
         <>
             <h2>My events</h2>
