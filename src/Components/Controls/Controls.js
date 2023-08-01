@@ -8,7 +8,7 @@ const Controls = () => {
                 <option selected value='Sort By'>Sort by</option>
                 <option value='business'>Business</option>
             </select>
-            <NavLink>Add new event</NavLink>
+            <NavLink to='/add'>Add new event</NavLink>
         </>
     )
 };

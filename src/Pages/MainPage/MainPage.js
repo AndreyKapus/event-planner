@@ -1,4 +1,5 @@
 import Controls from "../../Components/Controls/Controls";
+import EventsList from "../../Components/EventsList/EventsList";
 import Header from "../../Components/Header/Header";
 
 const MainPage = () => {
@@ -6,6 +7,7 @@ const MainPage = () => {
         <>
             <Header/>
             <Controls/>
+            <EventsList/>
         </>
     )
 };
