@@ -1,6 +1,6 @@
-import { create } from 'zustand'
+import { create } from 'zustand';
 import { v4 as uuidv4 } from 'uuid';
-import {devtools, persist, createJSONStorage} from 'zustand/middleware'
+import {devtools, persist, createJSONStorage} from 'zustand/middleware';
 
 export const useEvents = create(devtools(persist((set, get) => ({
     events: [
@@ -34,6 +34,6 @@ export const useEvents = create(devtools(persist((set, get) => ({
     }),
 }),
 {
-    name: 'events-storage', // name of the item in the storage (must be unique)
-    storage: createJSONStorage(() => localStorage), // (optional) by default, 'localStorage' is used
+    name: 'events-storage',
+    storage: createJSONStorage(() => localStorage),
   })))

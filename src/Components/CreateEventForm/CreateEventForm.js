@@ -4,14 +4,13 @@ import { useEvents } from "../../Store/EventsStore";
 
 const CreateEventForm = () => {
     const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('')
-    const [date, setDate] = useState('')
-    const [time, setTime] = useState('')
-    const [location, setLocation] = useState('')
-    const [category, setCategory] = useState('')
-    const [picture, setPicture] = useState('')
-    const [priority, setPriority] = useState('')
-    // const [createEvent, setCreateEvent] = useState({initialState});
+    const [description, setDescription] = useState('');
+    const [date, setDate] = useState('');
+    const [time, setTime] = useState('');
+    const [location, setLocation] = useState('');
+    const [category, setCategory] = useState('');
+    const [picture, setPicture] = useState('');
+    const [priority, setPriority] = useState('');
 
     const add = useEvents((state) => state.addEvent);
 
