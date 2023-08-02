@@ -1,13 +1,27 @@
+import {Container,
+        Wrapper,
+        Select,
+        Title,
+        Input,
+        Options,
+  
+} from './Header.styled'
+
 const Header = () => {
     return (
-        <header>
-            <h1>Event planner</h1>
-            <input type="text" placeholder="search by tags"/>
-            <select>
-                <option value='UK'>UK</option>
-                <option value='UK'>UA</option>
-            </select>
-        </header>
+        <Container>
+            <Wrapper>
+                <Title>Event planner</Title>
+                <Select>
+                    <Options value='UK'>UK</Options>
+                    <Options value='UK'>UA</Options>
+                </Select>
+            </Wrapper>
+
+            <Input type="text" placeholder="search by tags"/> 
+
+        </Container>
+
     )
 };
 

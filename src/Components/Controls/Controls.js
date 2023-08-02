@@ -1,15 +1,17 @@
 import { NavLink } from "react-router-dom";
+import {ControlsWrapper,
+        CategoryBtn,
+        SortBtn,
+        AddBtn,
+} from './Controls.styled'
 
 const Controls = () => {
     return (
-        <>
-            <button type="button">Category</button>
-            <select>
-                <option selected value='Sort By'>Sort by</option>
-                <option value='business'>Business</option>
-            </select>
-            <NavLink to='/add'>Add new event</NavLink>
-        </>
+        <ControlsWrapper>
+            <CategoryBtn type="button">Cat</CategoryBtn>
+            <SortBtn>Sort</SortBtn>
+            <AddBtn to='/add'>Add</AddBtn>   
+        </ControlsWrapper>
     )
 };
 
