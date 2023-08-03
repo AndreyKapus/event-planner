@@ -6,26 +6,27 @@ import {Dropdown,
         BtnContent,
         Wrapper,
         Container,
+        DropListText,
 } from './FilterButton.styled.js'
 import ArrowUpIcon from '../../../Icons/ArrowUp';
 import ArrowDownIcon from '../../../Icons/ArrowDown';
 
-const FilterIcon = () => {
-    const [isOpen, setIsOpen] = useState(false);
+const FilterIcon = ({toggleFilterOpen, isFilterOpen}) => {
+    // const [isOpen, setIsOpen] = useState(false);
 
-    const toggleSortOpen = () => {
-        !isOpen ? setIsOpen(true) : setIsOpen(false)
-    };
+    // const toggleSortOpen = () => {
+    //     !isOpen ? setIsOpen(true) : setIsOpen(false)
+    // };
 
     return (<Container>
             <Wrapper>
-                <CategoryBtn type="button" onClick={toggleSortOpen} isOpen={isOpen}>
-                    {isOpen ? 
+                <CategoryBtn id='filter' type="button" onClick={toggleFilterOpen} isOpen={isFilterOpen}>
+                    {isFilterOpen ? 
                             <BtnContent>
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M4 4L9 12V18L15 21V12L20 4H4Z" stroke="#7B61FF"/>
                                 </svg>
-                                <p>Sort by</p>
+                                <p>Category</p>
                             </BtnContent> : 
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4 4L9 12V18L15 21V12L20 4H4Z" stroke="#3F3F3F" />
@@ -33,35 +34,35 @@ const FilterIcon = () => {
                             
                     }
                 </CategoryBtn>
-                <Dropdown isOpen={isOpen}>
+                <Dropdown isOpen={isFilterOpen}>
                     <DropList>
                         <DropListItem>
-                            <p>by name</p>
+                            <DropListText>by name</DropListText>
                             <ArrowUpIcon/>
                         </DropListItem>
 
                         <DropListItem>
-                            <p>by name</p>
+                            <DropListText>by name</DropListText>
                             <ArrowDownIcon/>
                         </DropListItem>
                         
                         <DropListItem>
-                            <p>by data</p>
+                            <DropListText>by data</DropListText>
                             <ArrowUpIcon/>
                         </DropListItem>
 
                         <DropListItem>
-                            <p>by data</p>
+                            <DropListText>by data</DropListText>
                             <ArrowDownIcon/>
                         </DropListItem>
 
                         <DropListItem>
-                            <p>by ptiority</p>
+                            <DropListText>by ptiority</DropListText>
                             <ArrowUpIcon/>
                         </DropListItem>
 
                         <DropListItem>
-                            <p>by ptiority</p>
+                            <DropListText>by ptiority</DropListText>
                             <ArrowDownIcon/>
                         </DropListItem>
                     </DropList>

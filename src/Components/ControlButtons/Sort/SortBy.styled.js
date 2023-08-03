@@ -1,28 +1,17 @@
 import styled from '@emotion/styled';
 
-export const Container = styled.div`
-    position: absolute;
-    left: 0px;
-`
-
 export const Wrapper = styled.div`
     position: relative;
 `;
 
-export const CategoryBtn = styled.button`
-    position: absolute;
-    width: ${(props) => !props.isOpen ? '56px' : '170px'};
+export const SortBtnStyled = styled.button`
+    width: 56px;
     height: 56px;
     border: none;
     border-radius: 8px;
     box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
     background-color: ${p => p.theme.colors.white};
-`;
-
-export const BtnContent = styled.div`
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    margin-left: 24px;
 `;
 
 export const Dropdown = styled.div`
