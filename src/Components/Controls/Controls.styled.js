@@ -17,7 +17,7 @@ export const CategoryBtn = styled.button`
     background-color: ${p => p.theme.colors.white};
 `;
 
-export const SortBtn = styled.button`
+export const SortBtnStyled = styled.button`
     width: 56px;
     height: 56px;
     border: none;

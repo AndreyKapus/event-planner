@@ -1,22 +1,16 @@
 import {ControlsWrapper,
-        CategoryBtn,
-        SortBtn,
         AddBtn,
 } from './Controls.styled'
-import SortIcon from '../../Icons/Sort/SortIcon';
-import { useState } from 'react';
+
+import SortBtn from '../../Icons/Sort/SortBtn';
+import FilterIcon from '../../Icons/Filter/FilterIcon';
 
 const Controls = () => {
-    const [sortOpen, setSortOpen] = useState(false);
-
-    const handleSortOpen = () => {
-        setSortOpen(true)
-    }
 
     return (
         <ControlsWrapper>
-            <CategoryBtn type="button"></CategoryBtn>
-            <SortBtn type='button' onClick={handleSortOpen}><SortIcon sortOpen={sortOpen}/></SortBtn>
+            <FilterIcon/>
+            <SortBtn/>
             <AddBtn to='/add'>Add</AddBtn>   
         </ControlsWrapper>
     )
