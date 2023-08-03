@@ -1,9 +1,9 @@
 import {ControlsWrapper,
-        AddBtn,
 } from './Controls.styled'
 
 import SortBtn from '../../Icons/Sort/SortBtn';
 import FilterIcon from '../../Icons/Filter/FilterIcon';
+import AddButton from '../ControlButtons/Add/AddButton';
 
 const Controls = () => {
 
@@ -11,7 +11,7 @@ const Controls = () => {
         <ControlsWrapper>
             <FilterIcon/>
             <SortBtn/>
-            <AddBtn to='/add'>Add</AddBtn>   
+            <AddButton/>
         </ControlsWrapper>
     )
 };
