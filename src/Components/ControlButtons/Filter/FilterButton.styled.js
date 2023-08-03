@@ -15,7 +15,7 @@ export const CategoryBtn = styled.button`
     height: 56px;
     border: none;
     border-bottom: ${(props) => !props.isOpen ? 'none' : '1px solid #ACA7C3'};
-    border-radius: ${(props) => !props.isOpen ? '8px' : '8px 8px 0px 0px;'};
+    border-radius: ${(props) => !props.isOpen ? '8px' : '8px 8px 0px 0px'};
     box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
     background-color: ${p => p.theme.colors.white};
 `;

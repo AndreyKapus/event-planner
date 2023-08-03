@@ -3,6 +3,8 @@ import { EventCard,
         EventSection, 
         EventListTittle,
 } from './EventList.styled.js';
+import defaultImg from '../../Images/defaultImg.jpg';
+
 
 const EventsList = () => {
     const events = useEvents(state => state.events)
@@ -10,19 +12,20 @@ const EventsList = () => {
     return (
         <EventSection>
             <EventListTittle>My events</EventListTittle>
-            <EventCard>
+            <ul>
             {events && events.map((event) => (
-                <li key={event.id}>
-                    <p>{event.title}</p>
-                    <p>{event.description}</p>
-                    <p>{event.date}</p>
-                    <p>{event.time}</p>
-                    <p>{event.location}</p>
-                    <p>{event.category}</p>
-                    <p>{event.priority}</p>
-                </li>
+                <EventCard key={event.id}>
+                    <img src={defaultImg} alt='default-pic'/>
+                        <p>{event.title}</p>
+                        <p>{event.description}</p>
+                        <p>{event.date}</p>
+                        <p>{event.time}</p>
+                        <p>{event.location}</p>
+                        <p>{event.category}</p>
+                        <p>{event.priority}</p>
+                    </EventCard>
             ))}
-            </EventCard>
+            </ul>
         </EventSection>
     )
 };
