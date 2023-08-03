@@ -9,6 +9,7 @@ export const EventListTittle = styled.h2`
 `;
 
 export const EventCard = styled.li`
+    position: relative;
     width: 271px;
     height: 480px;
     margin-left: auto;
@@ -16,4 +17,14 @@ export const EventCard = styled.li`
     list-style: none;
     border: 1px solid black;
     border-radius: 12px;
-`
+`;
+
+export const Category = styled.p`
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: ${p => p.theme.colors.white};
+    padding: 10px;
+`;
