@@ -16,13 +16,13 @@ const EventsList = () => {
             {events && events.map((event) => (
                 <EventCard key={event.id}>
                     <img src={defaultImg} alt='default-pic'/>
-                        <p>{event.title}</p>
-                        <p>{event.description}</p>
+                        <p>{event.category}</p>
+                        <p>{event.priority}</p>
                         <p>{event.date}</p>
                         <p>{event.time}</p>
                         <p>{event.location}</p>
-                        <p>{event.category}</p>
-                        <p>{event.priority}</p>
+                        <p>{event.title}</p>
+                        <p>{event.description}</p>
                     </EventCard>
             ))}
             </ul>

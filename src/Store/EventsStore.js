@@ -5,15 +5,15 @@ import {devtools, persist, createJSONStorage} from 'zustand/middleware';
 export const useEvents = create(devtools(persist((set, get) => ({
     events: [
         {
-            id: 'w',
-            title: 'e',
-            description: 'r',
-            date: 't',
-            time: 't',
-            location: 't',
-            category: 'd',
+            id: '24',
+            title: 'Gallery opening',
+            description: 'Discover an enchanting evening celebrating the world of art at our exclusive gallery opening.',
+            date: '20.12',
+            time: '20:30',
+            location: 'Kyiv',
+            category: 'business',
             addPicture: 'ds',
-            priority: 'ds',
+            priority: 'medium',
         },
     ],
 
