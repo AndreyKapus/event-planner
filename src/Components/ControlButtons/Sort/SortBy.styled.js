@@ -5,17 +5,29 @@ export const Wrapper = styled.div`
 `;
 
 export const SortBtnStyled = styled.button`
-    width: 56px;
+    position: absolute;
+    right: 50%;
+    width: ${(props) => !props.isOpen ? '56px' : '170px'};
     height: 56px;
     border: none;
     border-radius: 8px;
     box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
     background-color: ${p => p.theme.colors.white};
-    margin-left: 24px;
+    
+    visibility: ${(props) => props.isFilterOpen ? 'hidden' : 'visible'};
+    opacity: ${(props) => props.isFilterOpen ? '0' : '1'};
 `;
+
+export const BtnContent = styled.div`
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+`;
+
 
 export const Dropdown = styled.div`
     position: absolute;
+    right: 50%;
     top: 56px;
     width: 170px;
     visibility: ${(props) => !props.isOpen ? 'hidden' : 'visible'};

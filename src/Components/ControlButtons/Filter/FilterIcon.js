@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { CategoryBtn } from './FilterButton.styled';
 import {Dropdown,
         DropList,
@@ -12,11 +11,6 @@ import ArrowUpIcon from '../../../Icons/ArrowUp';
 import ArrowDownIcon from '../../../Icons/ArrowDown';
 
 const FilterIcon = ({toggleFilterOpen, isFilterOpen}) => {
-    // const [isOpen, setIsOpen] = useState(false);
-
-    // const toggleSortOpen = () => {
-    //     !isOpen ? setIsOpen(true) : setIsOpen(false)
-    // };
 
     return (<Container>
             <Wrapper>
