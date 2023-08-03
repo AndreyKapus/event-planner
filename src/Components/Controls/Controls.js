@@ -1,18 +1,21 @@
 import {ControlsWrapper,
+        Container,
 } from './Controls.styled'
 
-import SortBtn from '../../Icons/Sort/SortBtn';
-import FilterIcon from '../../Icons/Filter/FilterIcon';
+import SortBtn from '../ControlButtons/Sort/SortBtn';
+import FilterIcon from '../ControlButtons/Filter/FilterIcon';
 import AddButton from '../ControlButtons/Add/AddButton';
 
 const Controls = () => {
 
     return (
-        <ControlsWrapper>
-            <FilterIcon/>
-            <SortBtn/>
-            <AddButton/>
-        </ControlsWrapper>
+        <Container>
+            <ControlsWrapper>
+                <FilterIcon/>
+                    <SortBtn/>
+                <AddButton/>
+            </ControlsWrapper>
+        </Container>
     )
 };
 

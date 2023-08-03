@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {SortBtnStyled,
-} from '../../Components/Controls/Controls.styled.js'
+} from '../../Controls/Controls.styled.js'
 
 const SortBtn = () => {
     const [isOpen, setIsOpen] = useState(false);
