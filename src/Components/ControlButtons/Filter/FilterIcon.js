@@ -7,8 +7,6 @@ import {Dropdown,
         Container,
         DropListText,
 } from './FilterButton.styled.js'
-import ArrowUpIcon from '../../../Icons/ArrowUp';
-import ArrowDownIcon from '../../../Icons/ArrowDown';
 
 const FilterIcon = ({toggleFilterOpen, isFilterOpen}) => {
 
@@ -31,33 +29,22 @@ const FilterIcon = ({toggleFilterOpen, isFilterOpen}) => {
                 <Dropdown isOpen={isFilterOpen}>
                     <DropList>
                         <DropListItem>
-                            <DropListText>by name</DropListText>
-                            <ArrowUpIcon/>
+                            <DropListText>Art</DropListText>                           
                         </DropListItem>
-
                         <DropListItem>
-                            <DropListText>by name</DropListText>
-                            <ArrowDownIcon/>
+                            <DropListText>Music</DropListText>                            
+                        </DropListItem>           
+                        <DropListItem>
+                            <DropListText>Business</DropListText>                 
                         </DropListItem>
-                        
                         <DropListItem>
-                            <DropListText>by data</DropListText>
-                            <ArrowUpIcon/>
+                            <DropListText>Conference</DropListText>                     
                         </DropListItem>
-
                         <DropListItem>
-                            <DropListText>by data</DropListText>
-                            <ArrowDownIcon/>
+                            <DropListText>Workshop</DropListText>                      
                         </DropListItem>
-
                         <DropListItem>
-                            <DropListText>by ptiority</DropListText>
-                            <ArrowUpIcon/>
-                        </DropListItem>
-
-                        <DropListItem>
-                            <DropListText>by ptiority</DropListText>
-                            <ArrowDownIcon/>
+                            <DropListText>Sport</DropListText>
                         </DropListItem>
                     </DropList>
                 </Dropdown>

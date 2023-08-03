@@ -1,22 +1,29 @@
 import {useEvents} from '../../Store/EventsStore.js'
+import { EventCard,
+        EventSection, 
+        EventListTittle,
+} from './EventList.styled.js';
 
 const EventsList = () => {
     const events = useEvents(state => state.events)
-    // console.log(events)
+
     return (
-        <>
-            <h2>My events</h2>
+        <EventSection>
+            <EventListTittle>My events</EventListTittle>
+            <EventCard>
             {events && events.map((event) => (
-                <div key={event.id}>
-                    <p>{event.id}</p>
+                <li key={event.id}>
                     <p>{event.title}</p>
                     <p>{event.description}</p>
                     <p>{event.date}</p>
                     <p>{event.time}</p>
+                    <p>{event.location}</p>
+                    <p>{event.category}</p>
                     <p>{event.priority}</p>
-                </div>
+                </li>
             ))}
-        </>
+            </EventCard>
+        </EventSection>
     )
 };
 
