@@ -13,6 +13,7 @@ import { EventCard,
         EventDescrWrapper,
         EventTitle,
         EventText,
+        MoreInfoBtn,
 } from './EventList.styled.js';
 import defaultImg from '../../Images/defaultImg.jpg';
 
@@ -44,6 +45,7 @@ const EventsList = () => {
                             <EventTitle>{title}</EventTitle>
                             <EventText>{description}</EventText>
                         </EventDescrWrapper>
+                        <MoreInfoBtn className='more' type='button' dis >More info</MoreInfoBtn>
                     </EventCard>
             ))}
             </ul>

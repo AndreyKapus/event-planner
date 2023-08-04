@@ -1,10 +1,15 @@
-import styled from '@emotion/styled';
+
+import styled from "@emotion/styled/macro";
 
 export const EventSection = styled.section`
     margin-top: 40px;
 `;
 
 export const EventListTittle = styled.h2`
+    display: none;
+`;
+
+export const MoreInfoBtn = styled.button`
     display: none;
 `;
 
@@ -18,6 +23,10 @@ export const EventCard = styled.li`
     border: 1px solid black;
     border-radius: 12px;
     margin-bottom: 24px;
+    cursor: pointer;
+    &:hover .more {
+        display: block;
+    };
 `;
 
 export const StickersWrapper = styled.div`
@@ -93,4 +102,6 @@ export const EventText = styled.p`
     font-weight: ${p => p.theme.fontWaight.regular};
     font-size: ${p => p.theme.fontSizes.textSize};
     color: ${p => p.theme.colors.textColor};
-`
+`;
+
+

@@ -1,5 +1,12 @@
 import { useState } from "react";
 import { useEvents } from "../../Store/EventsStore";
+import { CreateEventWrapper,
+        Form,
+        CreateEventTitle,
+        FormLabel,
+        FormInput,
+        AddBtn,
+    } from "./CreateEvent.styled";
 
 
 const CreateEventForm = () => {
@@ -54,56 +61,37 @@ const CreateEventForm = () => {
     }
 
     return(
-        <>
-            <form onSubmit={handleSubmit}>
-                <label>Title
-                    <input type='text' name="title" onChange={handleChange}/>
-                </label>
+        <CreateEventWrapper>
+            <CreateEventTitle>Create new event</CreateEventTitle>
+            <Form onSubmit={handleSubmit}>
+                <FormLabel for='title'>Title</FormLabel>
+                <FormInput type='text' name="title" id='title' onChange={handleChange}/>
 
-                <label>Description
-                    <input type='text' name="description" onChange={handleChange}/>
-                </label>
+                <FormLabel for='description'>Description</FormLabel>
+                <FormInput type='text' name="description" id='description' desc onChange={handleChange}/>
 
-                <label>Select date
-                    <input type='text' name="date" onChange={handleChange}/>
-                </label>
+                <FormLabel for='date'>Select date</FormLabel>
+                <FormInput type='text' name="date" id="date" onChange={handleChange}/>
 
-                <label>Select time
-                    <input type='text' name="time" onChange={handleChange}/>
-                </label>
+                <FormLabel for='time'>Select time</FormLabel>
+                <FormInput type='text' name="time" id="time" onChange={handleChange}/>
 
-                <label>Location
-                    <input type='text' name="location" onChange={handleChange}/>
-                </label>
+                <FormLabel for='location'>Location</FormLabel>
+                <FormInput type='text' name="location" id="location" onChange={handleChange}/>
 
-                <label>Category
-                    <input type='text'name="category" onChange={handleChange}/>
-                </label>
+                <FormLabel for='category'>Category</FormLabel>
+                <FormInput type='text'name="category" id="category" onChange={handleChange}/>
 
-                <label>Set picture
-                    <input type='text' name="picture" onChange={handleChange}/>
-                </label>
+                <FormLabel for='picture'>Set picture</FormLabel>
+                <FormInput type='text' name="picture" id="picture" onChange={handleChange}/>
 
-                <label>Priority
-                    <input type='text' name="priority" onChange={handleChange}/>
-                </label>    
+                <FormLabel for='priority'>Priority</FormLabel>  
+                <FormInput type='text' name="priority" id="priority" onChange={handleChange}/>  
 
-                <button type="submit" >Add event</button> 
-            </form>
-        </>
+                <AddBtn type="submit" >Add event</AddBtn> 
+            </Form>
+        </CreateEventWrapper>
     )
 };
 
 export default CreateEventForm;
-
-
-// const initialState = {
-//     title: '',
-//     description: '',
-//     date: '',
-//     time: '',
-//     location: '',
-//     category: '',
-//     picture: '',
-//     priority: '',
-// }
