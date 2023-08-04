@@ -17,9 +17,8 @@ import { EventCard,
 } from './EventList.styled.js';
 import defaultImg from '../../Images/defaultImg.jpg';
 
-
 const EventsList = () => {
-    const events = useEvents(state => state.events)
+    const events = useEvents(state => state.events);
 
     return (
         <EventSection>
@@ -27,9 +26,9 @@ const EventsList = () => {
             <ul>
             {events && events.map(({id, date, time, location, category, priority, title,description}) => (
                     <EventCard key={id}>
-                        <ImgWrapper>
+                        <ImgWrapper className='imageWrapper'>
                             <img src={defaultImg} alt='default-pic'/>
-                            <MeetInfoWrapper>
+                            <MeetInfoWrapper className='MeetInfoWrapper'>
                                 <MeetTimeWrapper>
                                     <MeetDate>{date}</MeetDate>
                                     <MeetTime>at {time}</MeetTime>
@@ -37,15 +36,16 @@ const EventsList = () => {
                                 <MeetLocation>{location}</MeetLocation>
                             </MeetInfoWrapper>
                         </ImgWrapper>
+                        <EventDescrWrapper className='EventDescrWrapper'>
+                            <EventTitle>{title}</EventTitle>
+                            <EventText>{description}</EventText>
+                        </EventDescrWrapper>
                         <StickersWrapper>
                             <Sticker>{category}</Sticker>
                             <Sticker>{priority}</Sticker>
                         </StickersWrapper>
-                        <EventDescrWrapper>
-                            <EventTitle>{title}</EventTitle>
-                            <EventText>{description}</EventText>
-                        </EventDescrWrapper>
-                        <MoreInfoBtn className='more' type='button' dis >More info</MoreInfoBtn>
+
+                        <MoreInfoBtn className='more' type='button'>More info</MoreInfoBtn>
                     </EventCard>
             ))}
             </ul>

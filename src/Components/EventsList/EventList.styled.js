@@ -1,5 +1,6 @@
 
 import styled from "@emotion/styled/macro";
+import defaultImg from '../../Images/default2.jpg'
 
 export const EventSection = styled.section`
     margin-top: 40px;
@@ -16,7 +17,7 @@ export const MoreInfoBtn = styled.button`
 export const EventCard = styled.li`
     position: relative;
     width: 271px;
-    height: auto;
+    height: 480px;
     margin-left: auto;
     margin-right: auto;
     list-style: none;
@@ -24,9 +25,27 @@ export const EventCard = styled.li`
     border-radius: 12px;
     margin-bottom: 24px;
     cursor: pointer;
+
     &:hover .more {
         display: block;
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
     };
+
+    &:hover .imageWrapper {
+        position: static;
+    };
+
+    &:hover .MeetInfoWrapper {
+        top: 200px;
+    };
+
+    &:hover .EventDescrWrapper {
+        backGround-color: white;
+        position: absolute;
+        top: 240px;
+    }
 `;
 
 export const StickersWrapper = styled.div`
