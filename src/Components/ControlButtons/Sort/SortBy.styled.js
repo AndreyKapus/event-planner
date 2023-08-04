@@ -27,6 +27,7 @@ export const BtnContent = styled.div`
 
 export const Dropdown = styled.div`
     position: absolute;
+    z-index: 1;
     right: 50%;
     top: 56px;
     width: 170px;

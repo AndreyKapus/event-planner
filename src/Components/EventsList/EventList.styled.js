@@ -1,6 +1,6 @@
 
 import styled from "@emotion/styled/macro";
-import defaultImg from '../../Images/default2.jpg'
+import { NavLink } from "react-router-dom";
 
 export const EventSection = styled.section`
     margin-top: 40px;
@@ -10,8 +10,19 @@ export const EventListTittle = styled.h2`
     display: none;
 `;
 
-export const MoreInfoBtn = styled.button`
+export const MoreInfoBtn = styled(NavLink)`
     display: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 24px;
+    padding-right: 24px;
+    background-color: ${p => p.theme.colors.accent};
+    color: ${p => p.theme.colors.white};
+    border: none;
+    border-radius: 8px;
+    font-weight: ${p => p.theme.fontWaight.medium};
+    font-size: ${p => p.theme.fontSizes.textSize};
+    text-decoration: none;
 `;
 
 export const EventCard = styled.li`

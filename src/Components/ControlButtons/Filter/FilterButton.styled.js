@@ -28,6 +28,7 @@ export const BtnContent = styled.div`
 
 export const Dropdown = styled.div`
     position: absolute;
+    z-index: 1;
     top: 56px;
     width: 158px;
     visibility: ${(props) => !props.isOpen ? 'hidden' : 'visible'};

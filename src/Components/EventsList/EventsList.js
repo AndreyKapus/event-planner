@@ -45,7 +45,7 @@ const EventsList = () => {
                             <Sticker>{priority}</Sticker>
                         </StickersWrapper>
 
-                        <MoreInfoBtn className='more' type='button'>More info</MoreInfoBtn>
+                        <MoreInfoBtn to='/event' className='more' type='button'>More info</MoreInfoBtn>
                     </EventCard>
             ))}
             </ul>
