@@ -7,6 +7,8 @@ export const theme = {
         green: '#6BD475',
         primaryText: '#ACA7C3',
         secondaryText: '#3F3F3F',
+        textColor: '#49454F',
+        titleColor: '#1C1B1F',
         white: '#FFFFFF',
     },
 

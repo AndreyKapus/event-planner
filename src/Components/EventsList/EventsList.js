@@ -2,7 +2,17 @@ import {useEvents} from '../../Store/EventsStore.js'
 import { EventCard,
         EventSection, 
         EventListTittle,
-        Category,
+        Sticker,
+        StickersWrapper,
+        MeetInfoWrapper,
+        ImgWrapper,
+        MeetTimeWrapper,
+        MeetDate,
+        MeetTime,
+        MeetLocation,
+        EventDescrWrapper,
+        EventTitle,
+        EventText,
 } from './EventList.styled.js';
 import defaultImg from '../../Images/defaultImg.jpg';
 
@@ -14,16 +24,26 @@ const EventsList = () => {
         <EventSection>
             <EventListTittle>My events</EventListTittle>
             <ul>
-            {events && events.map((event) => (
-                <EventCard key={event.id}>
-                    <img src={defaultImg} alt='default-pic'/>
-                        <Category>{event.category}</Category>
-                        <p>{event.priority}</p>
-                        <p>{event.date}</p>
-                        <p>{event.time}</p>
-                        <p>{event.location}</p>
-                        <p>{event.title}</p>
-                        <p>{event.description}</p>
+            {events && events.map(({id, date, time, location, category, priority, title,description}) => (
+                    <EventCard key={id}>
+                        <ImgWrapper>
+                            <img src={defaultImg} alt='default-pic'/>
+                            <MeetInfoWrapper>
+                                <MeetTimeWrapper>
+                                    <MeetDate>{date}</MeetDate>
+                                    <MeetTime>at {time}</MeetTime>
+                                </MeetTimeWrapper>
+                                <MeetLocation>{location}</MeetLocation>
+                            </MeetInfoWrapper>
+                        </ImgWrapper>
+                        <StickersWrapper>
+                            <Sticker>{category}</Sticker>
+                            <Sticker>{priority}</Sticker>
+                        </StickersWrapper>
+                        <EventDescrWrapper>
+                            <EventTitle>{title}</EventTitle>
+                            <EventText>{description}</EventText>
+                        </EventDescrWrapper>
                     </EventCard>
             ))}
             </ul>
