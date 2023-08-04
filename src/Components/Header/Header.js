@@ -1,3 +1,4 @@
+import { Outlet } from 'react-router-dom';
 import {Container,
         Wrapper,
         Select,
@@ -9,19 +10,17 @@ import {Container,
 
 const Header = () => {
     return (
-        <Container>
-            <Wrapper>
-                <Title>Event planner</Title>
-                <Select>
-                    <Options value='UK'>UK</Options>
-                    <Options value='UK'>UA</Options>
-                </Select>
-            </Wrapper>
-
-            <Input type="text" placeholder="search by tags"/> 
-
-        </Container>
-
+            <Container>
+                <Wrapper>
+                    <Title>Event planner</Title>
+                    <Select>
+                        <Options value='UK'>UK</Options>
+                        <Options value='UK'>UA</Options>
+                    </Select>
+                </Wrapper>
+                <Input type="text" placeholder="search by tags"/> 
+                <Outlet/>
+            </Container>
     )
 };
 

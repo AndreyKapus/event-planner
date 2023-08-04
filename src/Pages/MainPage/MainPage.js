@@ -5,11 +5,10 @@ import {MainContainer} from './MainPage.styled'
 
 const MainPage = () => {
     return (
-        <MainContainer>
-            <Header/>
+        <div>
             <Controls/>
             <EventsList/>
-        </MainContainer>
+        </div>
     )
 };
 

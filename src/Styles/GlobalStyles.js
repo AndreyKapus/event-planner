@@ -36,20 +36,17 @@ img {
 `
 
 export const Container = styled.div`
-width: 100%;
-padding-left: 15px;
-padding-right: 15px;
-margin: 0 auto;
+width: ${p => p.theme.screens.mobWidth};
+margin-top: 24px;
+margin-bottom: 24px;
+margin-left: auto;
+margin-right: auto;
 
-@media screen and (min-width: 320px) {
-    width: 320px;
+@media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
+    width: ${p => p.theme.screens.tabWidth};
 };
 
-@media screen and (min-width: 768px) {
-    width: 768px;
-  };
-
-@media screen and (min-width: 1280px) {
-    width: 1280px;
-  };
+@media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
+    width: ${p => p.theme.screens.deskWidth};
+};
 `;

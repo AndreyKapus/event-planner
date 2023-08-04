@@ -17,6 +17,7 @@ export const EventCard = styled.li`
     list-style: none;
     border: 1px solid black;
     border-radius: 12px;
+    margin-bottom: 24px;
 `;
 
 export const StickersWrapper = styled.div`
