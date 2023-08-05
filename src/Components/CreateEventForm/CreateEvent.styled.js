@@ -5,6 +5,7 @@ export const CreateEventWrapper = styled.div`
 `;
 
 export const CreateEventTitle = styled.h3`
+    margin-top: 24px;
     font-weight: ${p => p.theme.fontWaight.semibold};
     font-size: ${p => p.theme.fontSizes.titleSize};
 `;

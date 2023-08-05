@@ -7,6 +7,7 @@ import { CreateEventWrapper,
         FormInput,
         AddBtn,
     } from "./CreateEvent.styled";
+import GoBackBtn from "../GoBack/GoBack";
 
 
 const CreateEventForm = () => {
@@ -62,6 +63,7 @@ const CreateEventForm = () => {
 
     return(
         <CreateEventWrapper>
+            <GoBackBtn/>
             <CreateEventTitle>Create new event</CreateEventTitle>
             <Form onSubmit={handleSubmit}>
                 <FormLabel for='title'>Title</FormLabel>

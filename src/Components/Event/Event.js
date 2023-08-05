@@ -1,22 +1,43 @@
 import {useEvents} from '../../Store/EventsStore.js'
+import GoBackBtn from '../GoBack/GoBack.js';
+import {EventPageErapper,
+        EventTitle,
+        Image,
+        EventWrapper,
+        DescriptionWrapper,
+        DescriptionText,
+        DetailsList,
+        DetailsItem,
+        EventTime,
+} from './Event.styled'
+import defaultImage from '../../Images/default2.jpg'
 
 const Event = () => {
-    const events = useEvents(state => state.events)
+    const events = useEvents(state => state.events);
 
     return (
-        <section>
-            <h2>My events</h2>
+        <EventPageErapper>
+            <GoBackBtn/>
             {events && events.map((event) => (
                 <div key={event.id}>
-                    <p>{event.id}</p>
-                    <p>{event.title}</p>
-                    <p>{event.description}</p>
-                    <p>{event.date}</p>
-                    <p>{event.time}</p>
-                    <p>{event.priority}</p>
+                    <EventTitle>{event.title}</EventTitle>
+                    <EventWrapper>
+                        <Image>
+                            <img src={defaultImage} alt='default'/>
+                        </Image>
+                        <DescriptionWrapper>
+                            <DescriptionText>{event.description}</DescriptionText>
+                            <DetailsList>
+                                <DetailsItem>{event.category}</DetailsItem>
+                                <DetailsItem>{event.priority}</DetailsItem>
+                                <DetailsItem>{event.location}</DetailsItem>
+                            </DetailsList>
+                                <EventTime>{event.date} at {event.time}</EventTime> 
+                        </DescriptionWrapper>
+                    </EventWrapper>
                 </div>
             ))}
-        </section>
+        </EventPageErapper>
     )
 };
 
