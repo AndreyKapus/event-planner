@@ -1,4 +1,5 @@
 import {useEvents} from '../../Store/EventsStore.js'
+import { useId } from '../../Store/EventsStore.js';
 import { EventCard,
         EventSection, 
         EventListTittle,
@@ -19,33 +20,45 @@ import defaultImg from '../../Images/defaultImg.jpg';
 
 const EventsList = () => {
     const events = useEvents(state => state.events);
+    const setEventId = useId((state) => state.setId);
+
+    const handleEventDetails = (id) => {
+        setEventId(id);
+        // setInitialId()
+    };
 
     return (
         <EventSection>
             <EventListTittle>My events</EventListTittle>
             <ul>
-            {events && events.map(({id, date, time, location, category, priority, title,description}) => (
-                    <EventCard key={id}>
+            {events && events.map((event) => (
+                    <EventCard key={event.id}>
                         <ImgWrapper className='imageWrapper'>
                             <img src={defaultImg} alt='default-pic'/>
                             <MeetInfoWrapper className='MeetInfoWrapper'>
                                 <MeetTimeWrapper>
-                                    <MeetDate>{date}</MeetDate>
-                                    <MeetTime>at {time}</MeetTime>
+                                    <MeetDate>{event.date}</MeetDate>
+                                    <MeetTime>at {event.time}</MeetTime>
                                 </MeetTimeWrapper>
-                                <MeetLocation>{location}</MeetLocation>
+                                <MeetLocation>{event.location}</MeetLocation>
                             </MeetInfoWrapper>
                         </ImgWrapper>
                         <EventDescrWrapper className='EventDescrWrapper'>
-                            <EventTitle>{title}</EventTitle>
-                            <EventText>{description}</EventText>
+                            <EventTitle>{event.title}</EventTitle>
+                            <EventText>{event.description}</EventText>
                         </EventDescrWrapper>
                         <StickersWrapper>
-                            <Sticker>{category}</Sticker>
-                            <Sticker>{priority}</Sticker>
+                            <Sticker>{event.category}</Sticker>
+                            <Sticker>{event.priority}</Sticker>
                         </StickersWrapper>
 
-                        <MoreInfoBtn to='/event' className='more' type='button'>More info</MoreInfoBtn>
+                        <MoreInfoBtn 
+                            to='/event' 
+                            className='more' 
+                            type='button' 
+                            onClick={() => handleEventDetails(event.id)}>
+                            More info
+                        </MoreInfoBtn>
                     </EventCard>
             ))}
             </ul>

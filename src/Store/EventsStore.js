@@ -16,7 +16,7 @@ export const useEvents = create(devtools(persist((set, get) => ({
             priority: 'medium',
         },
     ],
-
+    
     addEvent: ({title, description, date, time, location, category, picture, priority}) => set(state => {
         const newEvent = {
             id: uuidv4(),
@@ -33,7 +33,14 @@ export const useEvents = create(devtools(persist((set, get) => ({
        return { events: [...state.events, newEvent] }
     }),
 }),
-{
+    {
     name: 'events-storage',
     storage: createJSONStorage(() => localStorage),
-  })))
+  })));
+
+
+  export const useId = create(set => ({
+    id: '',
+    setId: (value) => set({id: value}),
+    setInitialId: () => ({id: ''}),
+  }));

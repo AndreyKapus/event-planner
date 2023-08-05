@@ -23,7 +23,7 @@ export const Image = styled.div`
     border-radius: 8px;
 `;
 
-export const DescriptionWrapper = styled.p`
+export const DescriptionWrapper = styled.div`
     padding-top: 24px;
     padding-bottom: 24px;
     padding-left: 16px;
@@ -72,7 +72,7 @@ export const EventTime = styled.p`
     font-weight: ${p => p.theme.fontWaight.regular};
     font-size: ${p => p.theme.fontSizes.textSize};
     color: ${p => p.theme.colors.accent};
-`
+`;
 
 
 

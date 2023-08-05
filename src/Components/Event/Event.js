@@ -1,4 +1,5 @@
 import {useEvents} from '../../Store/EventsStore.js'
+import { useId } from '../../Store/EventsStore.js';
 import GoBackBtn from '../GoBack/GoBack.js';
 import {EventPageErapper,
         EventTitle,
@@ -11,32 +12,44 @@ import {EventPageErapper,
         EventTime,
 } from './Event.styled'
 import defaultImage from '../../Images/default2.jpg'
+import { useState } from 'react';
 
 const Event = () => {
-    const events = useEvents(state => state.events);
+    let singleEvent = {}
+    // const [singleEvent, setSingleEvent] = useState({})
+    const events = useEvents((state) => state.events);
+    const id = useId(state => state.id);
+    
+   
+    if(events && id) {
+       const event = events.find(ev => ev.id === toString(id));
+       console.log(event)
+       singleEvent = event
+    };
+
+  
 
     return (
         <EventPageErapper>
-            <GoBackBtn/>
-            {events && events.map((event) => (
-                <div key={event.id}>
-                    <EventTitle>{event.title}</EventTitle>
+           <GoBackBtn/>
+           {singleEvent && 
+                <div key={singleEvent.id}>
+                    <EventTitle>{singleEvent.title}</EventTitle>
                     <EventWrapper>
                         <Image>
                             <img src={defaultImage} alt='default'/>
                         </Image>
                         <DescriptionWrapper>
-                            <DescriptionText>{event.description}</DescriptionText>
+                            <DescriptionText>{singleEvent.description}</DescriptionText>
                             <DetailsList>
-                                <DetailsItem>{event.category}</DetailsItem>
-                                <DetailsItem>{event.priority}</DetailsItem>
-                                <DetailsItem>{event.location}</DetailsItem>
+                                <DetailsItem>{singleEvent.category}</DetailsItem>
+                                <DetailsItem>{singleEvent.priority}</DetailsItem>
+                                <DetailsItem>{singleEvent.location}</DetailsItem>
                             </DetailsList>
-                                <EventTime>{event.date} at {event.time}</EventTime> 
+                                <EventTime>{singleEvent.date} at {singleEvent.time}</EventTime> 
                         </DescriptionWrapper>
                     </EventWrapper>
-                </div>
-            ))}
+                </div>}
         </EventPageErapper>
     )
 };
