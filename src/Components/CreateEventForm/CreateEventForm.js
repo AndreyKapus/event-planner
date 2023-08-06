@@ -66,28 +66,28 @@ const CreateEventForm = () => {
             <GoBackBtn/>
             <CreateEventTitle>Create new event</CreateEventTitle>
             <Form onSubmit={handleSubmit}>
-                <FormLabel for='title'>Title</FormLabel>
+                <FormLabel htmlForfor='title'>Title</FormLabel>
                 <FormInput type='text' name="title" id='title' onChange={handleChange}/>
 
-                <FormLabel for='description'>Description</FormLabel>
+                <FormLabel htmlForfor='description'>Description</FormLabel>
                 <FormInput type='text' name="description" id='description' desc onChange={handleChange}/>
 
-                <FormLabel for='date'>Select date</FormLabel>
+                <FormLabel htmlForfor='date'>Select date</FormLabel>
                 <FormInput type='text' name="date" id="date" onChange={handleChange}/>
 
-                <FormLabel for='time'>Select time</FormLabel>
+                <FormLabel htmlForfor='time'>Select time</FormLabel>
                 <FormInput type='text' name="time" id="time" onChange={handleChange}/>
 
-                <FormLabel for='location'>Location</FormLabel>
+                <FormLabel htmlForfor='location'>Location</FormLabel>
                 <FormInput type='text' name="location" id="location" onChange={handleChange}/>
 
-                <FormLabel for='category'>Category</FormLabel>
+                <FormLabel htmlForfor='category'>Category</FormLabel>
                 <FormInput type='text'name="category" id="category" onChange={handleChange}/>
 
-                <FormLabel for='picture'>Set picture</FormLabel>
+                <FormLabel htmlForfor='picture'>Set picture</FormLabel>
                 <FormInput type='text' name="picture" id="picture" onChange={handleChange}/>
 
-                <FormLabel for='priority'>Priority</FormLabel>  
+                <FormLabel htmlForfor='priority'>Priority</FormLabel>  
                 <FormInput type='text' name="priority" id="priority" onChange={handleChange}/>  
 
                 <AddBtn type="submit" >Add event</AddBtn> 
