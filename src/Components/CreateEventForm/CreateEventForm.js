@@ -8,6 +8,7 @@ import { CreateEventWrapper,
         AddBtn,
     } from "./CreateEvent.styled";
 import GoBackBtn from "../GoBack/GoBack";
+import { useNavigate } from "react-router-dom";
 
 
 const CreateEventForm = () => {
@@ -19,6 +20,8 @@ const CreateEventForm = () => {
     const [category, setCategory] = useState('');
     const [picture, setPicture] = useState('');
     const [priority, setPriority] = useState('');
+
+    const navigate = useNavigate();
 
     const add = useEvents((state) => state.addEvent);
 
@@ -58,7 +61,8 @@ const CreateEventForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const event = {title, description, date, time, location, category, picture, priority}
-        add(event)
+        add(event);
+        navigate(-1)
     }
 
     return(

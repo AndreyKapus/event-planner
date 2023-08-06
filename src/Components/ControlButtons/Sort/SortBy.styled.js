@@ -16,12 +16,27 @@ export const SortBtnStyled = styled.button`
     background-color: ${p => p.theme.colors.white};
     visibility: ${(props) => props.isFilterOpen ? 'hidden' : 'visible'};
     opacity: ${(props) => props.isFilterOpen ? '0' : '1'};
+    padding: 16px;
+
+    @media screen and (min-width: 768px) {
+        justify-content: space-between;
+        display: block;
+        width: 129px;
+    };
 `;
 
 export const BtnContent = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
+`;
+
+export const BtnContentText = styled.p`
+    display: ${(props) => !props.isFilterOpen ? 'none' : 'block'};
+
+    @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
+        display: block;
+    };
 `;
 
 

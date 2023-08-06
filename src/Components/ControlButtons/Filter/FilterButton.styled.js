@@ -18,12 +18,27 @@ export const CategoryBtn = styled.button`
     border-radius: ${(props) => !props.isOpen ? '8px' : '8px 8px 0px 0px'};
     box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
     background-color: ${p => p.theme.colors.white};
+    padding: 16px;
+
+    @media screen and (min-width: 768px) {
+        justify-content: space-between;
+        display: block;
+        width: 143px;
+    };
 `;
 
 export const BtnContent = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+`;
+
+export const BtnContentText = styled.p`
+    display: ${(props) => !props.isFilterOpen ? 'none' : 'block'};
+
+    @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
+        display: block;
+    };
 `;
 
 export const Dropdown = styled.div`

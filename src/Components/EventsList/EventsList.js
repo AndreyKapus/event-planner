@@ -15,8 +15,9 @@ import { EventCard,
         EventTitle,
         EventText,
         MoreInfoBtn,
+        EventList,
 } from './EventList.styled.js';
-import defaultImg from '../../Images/defaultImg.jpg';
+import defaultImg from '../../Images/flowers.jpg';
 
 const EventsList = () => {
     const events = useEvents(state => state.events);
@@ -30,11 +31,11 @@ const EventsList = () => {
     return (
         <EventSection>
             <EventListTittle>My events</EventListTittle>
-            <ul>
+            <EventList>
             {events && events.map((event) => (
                     <EventCard key={event.id}>
                         <ImgWrapper className='imageWrapper'>
-                            <img src={defaultImg} alt='default-pic'/>
+                            <img src={defaultImg} alt='default'/>
                             <MeetInfoWrapper className='MeetInfoWrapper'>
                                 <MeetTimeWrapper>
                                     <MeetDate>{event.date}</MeetDate>
@@ -61,7 +62,7 @@ const EventsList = () => {
                         </MoreInfoBtn>
                     </EventCard>
             ))}
-            </ul>
+            </EventList>
         </EventSection>
     )
 };

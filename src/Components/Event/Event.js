@@ -12,12 +12,15 @@ import {EventPageErapper,
         EventTime,
 } from './Event.styled'
 import defaultImage from '../../Images/default2.jpg'
+import { useNavigate } from 'react-router-dom';
 
 const Event = () => {
     let singleEvent = {}
     const events = useEvents((state) => state.events);
     const id = useId(state => state.id);
     const deletEv = useEvents((state) => state.deleteEvent);
+
+    const navigate = useNavigate();
     
     if(events && id) {
        const event = events.find(ev => ev.id === id);
@@ -25,10 +28,9 @@ const Event = () => {
     };
 
     const handleDelete = (id) => {
-        console.log(id)
-        deletEv(id)
+        deletEv(id);
+        navigate(-1)
       };
-
   
     return (
         <EventPageErapper>

@@ -3,6 +3,11 @@ import styled from '@emotion/styled';
 export const Container = styled.header`
     padding-left: 24px;
     padding-right: 24px;
+
+    @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
+        padding-left: 40px;
+        padding-right: 40px;
+    };
     
     &::after {
         content: " ";

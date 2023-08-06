@@ -8,6 +8,12 @@ export const EventSection = styled.section`
 
 export const EventListTittle = styled.h2`
     display: none;
+
+    @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
+        display: block;
+        font-weight: ${p => p.theme.fontWaight.semibold};
+        font-size: ${p => p.theme.fontSizes.maxSize};
+    };
 `;
 
 export const MoreInfoBtn = styled(NavLink)`
@@ -25,17 +31,33 @@ export const MoreInfoBtn = styled(NavLink)`
     text-decoration: none;
 `;
 
+export const EventList = styled.ul`
+    @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+    margin-top: 24px;
+    padding-left: 0px;
+    padding-right: 0px;
+    justify-content: start;
+}
+    
+`
+
 export const EventCard = styled.li`
     position: relative;
     width: 271px;
     height: 480px;
+    margin-top: 24px;
     margin-left: auto;
     margin-right: auto;
     list-style: none;
-    border: 1px solid black;
+   
     border-radius: 12px;
     margin-bottom: 24px;
     cursor: pointer;
+    box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
 
     &:hover .more {
         display: block;
@@ -56,7 +78,15 @@ export const EventCard = styled.li`
         backGround-color: white;
         position: absolute;
         top: 240px;
-    }
+    };
+
+    @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
+        width: 332px;
+        margin-top: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+    };
 `;
 
 export const StickersWrapper = styled.div`
@@ -81,6 +111,7 @@ export const Sticker = styled.p`
 
 export const ImgWrapper = styled.div`
     position: relative;
+    margin: 0px;
 `;
 
 export const MeetInfoWrapper = styled.div`
