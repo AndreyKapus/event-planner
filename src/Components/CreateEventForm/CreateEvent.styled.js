@@ -10,6 +10,7 @@ export const CreateEventTitle = styled.h3`
     font-size: ${p => p.theme.fontSizes.titleSize};
 `;
 
+
 export const Form = styled.form`
     background-color: ${p => p.theme.colors.white};
     margin-top: 24px;
@@ -18,6 +19,16 @@ export const Form = styled.form`
     padding-left: 16px;
     padding-right: 16px;
     box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
+
+    @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 24px;
+        grid-column-end: 2;
+        grid-row-gap: 24px;
+        justify-self: end;
+        align-self: end;
+    };
 `;
 
 export const FormLabel = styled.label`
@@ -46,8 +57,12 @@ export const AddBtn = styled.button`
     margin-top: 40px;
     border: none;
     border-radius: 8px;
+    margin-right: auto;
     background-color: ${p => p.theme.colors.accent};
     color: ${p => p.theme.colors.white};
     font-weight: ${p => p.theme.fontWaight.medium};
     font-size: ${p => p.theme.fontSizes.subtitleSize};
+    float: right;
 `;
+
+

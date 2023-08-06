@@ -19,9 +19,9 @@ export const SortBtnStyled = styled.button`
     padding: 16px;
 
     @media screen and (min-width: 768px) {
-        justify-content: space-between;
-        display: block;
         width: 129px;
+        visibility: visible;
+        opacity: 1;
     };
 `;
 
@@ -49,6 +49,11 @@ export const Dropdown = styled.div`
     visibility: ${(props) => !props.isOpen ? 'hidden' : 'visible'};
     opacity: ${(props) => !props.isOpen ? '0' : '1'};
     background-color: ${p => p.theme.colors.white};
+
+    @media screen and (min-width: 768px) {
+        display: block;
+        width: 129px;
+    };
 `;
 
 export const DropList = styled.ul`

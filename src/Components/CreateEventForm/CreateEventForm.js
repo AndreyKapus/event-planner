@@ -6,6 +6,7 @@ import { CreateEventWrapper,
         FormLabel,
         FormInput,
         AddBtn,
+        FormWrapper
     } from "./CreateEvent.styled";
 import GoBackBtn from "../GoBack/GoBack";
 import { useNavigate } from "react-router-dom";
@@ -70,31 +71,33 @@ const CreateEventForm = () => {
             <GoBackBtn/>
             <CreateEventTitle>Create new event</CreateEventTitle>
             <Form onSubmit={handleSubmit}>
-                <FormLabel htmlForfor='title'>Title</FormLabel>
-                <FormInput type='text' name="title" id='title' onChange={handleChange}/>
+                    <div>
+                            <FormLabel htmlForfor='title'>Title</FormLabel>
+                            <FormInput type='text' name="title" id='title' onChange={handleChange}/>
 
-                <FormLabel htmlForfor='description'>Description</FormLabel>
-                <FormInput type='text' name="description" id='description' desc onChange={handleChange}/>
+                            <FormLabel htmlForfor='description'>Description</FormLabel>
+                            <FormInput type='text' name="description" id='description' desc onChange={handleChange}/>
 
-                <FormLabel htmlForfor='date'>Select date</FormLabel>
-                <FormInput type='text' name="date" id="date" onChange={handleChange}/>
+                            <FormLabel htmlForfor='date'>Select date</FormLabel>
+                            <FormInput type='text' name="date" id="date" onChange={handleChange}/>
 
-                <FormLabel htmlForfor='time'>Select time</FormLabel>
-                <FormInput type='text' name="time" id="time" onChange={handleChange}/>
+                            <FormLabel htmlForfor='time'>Select time</FormLabel>
+                            <FormInput type='text' name="time" id="time" onChange={handleChange}/>
+                        </div>
+                        <div>
+                            <FormLabel htmlForfor='location'>Location</FormLabel>
+                            <FormInput type='text' name="location" id="location" onChange={handleChange}/>
 
-                <FormLabel htmlForfor='location'>Location</FormLabel>
-                <FormInput type='text' name="location" id="location" onChange={handleChange}/>
+                            <FormLabel htmlForfor='category'>Category</FormLabel>
+                            <FormInput type='text'name="category" id="category" onChange={handleChange}/>
 
-                <FormLabel htmlForfor='category'>Category</FormLabel>
-                <FormInput type='text'name="category" id="category" onChange={handleChange}/>
+                            <FormLabel htmlForfor='picture'>Set picture</FormLabel>
+                            <FormInput type='text' name="picture" id="picture" onChange={handleChange}/>
 
-                <FormLabel htmlForfor='picture'>Set picture</FormLabel>
-                <FormInput type='text' name="picture" id="picture" onChange={handleChange}/>
-
-                <FormLabel htmlForfor='priority'>Priority</FormLabel>  
-                <FormInput type='text' name="priority" id="priority" onChange={handleChange}/>  
-
-                <AddBtn type="submit" >Add event</AddBtn> 
+                            <FormLabel htmlForfor='priority'>Priority</FormLabel>  
+                            <FormInput type='text' name="priority" id="priority" onChange={handleChange}/>   
+                        </div>
+                        <AddBtn type="submit" className="addBtn">Add event</AddBtn>
             </Form>
         </CreateEventWrapper>
     )

@@ -49,6 +49,10 @@ export const Dropdown = styled.div`
     visibility: ${(props) => !props.isOpen ? 'hidden' : 'visible'};
     opacity: ${(props) => !props.isOpen ? '0' : '1'};
     background-color: ${p => p.theme.colors.white};
+
+    @media screen and (min-width: 768px) {
+        width: 143px;
+    };
 `;
 
 export const DropList = styled.ul`
