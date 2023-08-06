@@ -20,15 +20,14 @@ const Event = () => {
     const events = useEvents((state) => state.events);
     const id = useId(state => state.id);
     
-   
+    
     if(events && id) {
-       const event = events.find(ev => ev.id === toString(id));
-       console.log(event)
+       const event = events.find(ev => ev.id === id);
+ 
        singleEvent = event
     };
 
   
-
     return (
         <EventPageErapper>
            <GoBackBtn/>
