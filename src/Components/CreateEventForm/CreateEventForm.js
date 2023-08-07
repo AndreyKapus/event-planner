@@ -83,7 +83,7 @@ const CreateEventForm = () => {
 
                     <div className="date">
                         <FormLabel htmlForfor='date'>Select date</FormLabel>
-                        <FormInput type='date' name="date" id="date" onChange={handleChange}/>
+                        <FormInput type='text' name="date" id="date" onChange={handleChange}/>
                     </div>
 
                     <div className="time">
