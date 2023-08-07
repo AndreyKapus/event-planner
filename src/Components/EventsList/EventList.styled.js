@@ -63,6 +63,7 @@ export const EventCard = styled.li`
     margin-left: auto;
     margin-right: auto;
     list-style: none;
+    background-color: ${p => p.theme.colors.white};
    
     border-radius: 12px;
     margin-bottom: 24px;
@@ -92,7 +93,6 @@ export const EventCard = styled.li`
 
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
         width: auto;
-        
         margin-top: 0px;
         margin-left: 0px;
         margin-right: 0px;
@@ -168,6 +168,7 @@ export const EventDescrWrapper = styled.div`
     padding-bottom: 16px;
     padding-left: 16px;
     padding-right: 16px;
+    width: 100%;
 `;
 
 export const EventTitle = styled.p`

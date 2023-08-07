@@ -1,12 +1,13 @@
 import Controls from "../../Components/Controls/Controls";
 import EventsList from "../../Components/EventsList/EventsList";
+import {MainPageContainer} from './MainPage.styled'
 
 const MainPage = () => {
     return (
-        <div>
+        <MainPageContainer>
             <Controls/>
             <EventsList/>
-        </div>
+        </MainPageContainer>
     )
 };
 

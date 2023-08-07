@@ -10,8 +10,12 @@ import {EventPageErapper,
         DetailsList,
         DetailsItem,
         EventTime,
+        EventContainer,
+        DescriptionContainer,
+        ControlsWrapper,
+        DeleteEventBtn,
 } from './Event.styled'
-import defaultImage from '../../Images/default2.jpg'
+import defaultImage from '../../Images/flowers-ultra.jpg'
 import { useNavigate } from 'react-router-dom';
 
 const Event = () => {
@@ -36,24 +40,30 @@ const Event = () => {
         <EventPageErapper>
            <GoBackBtn/>
            {singleEvent && 
-                <div key={singleEvent.id}>
+                <EventContainer key={singleEvent.id}>
                     <EventTitle>{singleEvent.title}</EventTitle>
                     <EventWrapper>
                         <Image>
                             <img src={defaultImage} alt='default'/>
                         </Image>
-                        <DescriptionWrapper>
-                            <DescriptionText>{singleEvent.description}</DescriptionText>
-                            <DetailsList>
-                                <DetailsItem>{singleEvent.category}</DetailsItem>
-                                <DetailsItem>{singleEvent.priority}</DetailsItem>
-                                <DetailsItem>{singleEvent.location}</DetailsItem>
-                            </DetailsList>
-                                <EventTime>{singleEvent.date} at {singleEvent.time}</EventTime> 
-                        </DescriptionWrapper>
-                        <button type='button' onClick={() => handleDelete(singleEvent.id)}>delete event</button>
+                       <ControlsWrapper>
+                            <DescriptionWrapper>
+                                <DescriptionText>{singleEvent.description}</DescriptionText>
+                                <DescriptionContainer>
+                                    <DetailsList>
+                                        <DetailsItem>{singleEvent.category}</DetailsItem>
+                                        <DetailsItem>{singleEvent.priority}</DetailsItem>
+                                        <DetailsItem>{singleEvent.location}</DetailsItem>
+                                        <DetailsItem>{singleEvent.date} at {singleEvent.time}</DetailsItem> 
+                                    </DetailsList>
+                                </DescriptionContainer>
+                            </DescriptionWrapper>
+                            <DeleteEventBtn type='button' onClick={() => handleDelete(singleEvent.id)}>Delete event</DeleteEventBtn>
+                       </ControlsWrapper>
+                       
                     </EventWrapper>
-                </div>}
+                </EventContainer>
+                }
         </EventPageErapper>
     )
 };

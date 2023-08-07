@@ -5,6 +5,7 @@ export const Container = styled.header`
     padding-bottom: 24px;
     padding-left: 24px;
     padding-right: 24px;
+    
 
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
         padding-left: 40px;

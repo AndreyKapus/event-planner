@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled'
+import background from '../../src/Images/background.jpg'
 
 export const GlobalStyles = css`
 @import-normalize;
@@ -39,6 +40,10 @@ export const Container = styled.div`
 width: ${p => p.theme.screens.mobWidth};
 margin-left: auto;
 margin-right: auto;
+
+background-image: url(${background});
+
+background-size: contain;
 
 @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
     width: ${p => p.theme.screens.tabWidth};
