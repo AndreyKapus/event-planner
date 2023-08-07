@@ -71,33 +71,47 @@ const CreateEventForm = () => {
             <GoBackBtn/>
             <CreateEventTitle>Create new event</CreateEventTitle>
             <Form onSubmit={handleSubmit}>
-                    <div>
-                            <FormLabel htmlForfor='title'>Title</FormLabel>
-                            <FormInput type='text' name="title" id='title' onChange={handleChange}/>
+                    <div className="title">
+                        <FormLabel htmlForfor='title'>Title</FormLabel>
+                        <FormInput type='text' name="title" id='title' onChange={handleChange}/>
+                    </div>
 
-                            <FormLabel htmlForfor='description'>Description</FormLabel>
-                            <FormInput type='text' name="description" id='description' desc onChange={handleChange}/>
+                    <div className="description">
+                        <FormLabel htmlForfor='description'>Description</FormLabel>
+                        <FormInput type='text' name="description" id='description' desc onChange={handleChange}/>
+                    </div>
 
-                            <FormLabel htmlForfor='date'>Select date</FormLabel>
-                            <FormInput type='text' name="date" id="date" onChange={handleChange}/>
+                    <div className="date">
+                        <FormLabel htmlForfor='date'>Select date</FormLabel>
+                        <FormInput type='text' name="date" id="date" onChange={handleChange}/>
+                    </div>
 
-                            <FormLabel htmlForfor='time'>Select time</FormLabel>
-                            <FormInput type='text' name="time" id="time" onChange={handleChange}/>
-                        </div>
-                        <div>
-                            <FormLabel htmlForfor='location'>Location</FormLabel>
-                            <FormInput type='text' name="location" id="location" onChange={handleChange}/>
+                    <div className="time">
+                        <FormLabel htmlForfor='time'>Select time</FormLabel>
+                        <FormInput type='text' name="time" id="time" onChange={handleChange}/>
+                    </div>
 
-                            <FormLabel htmlForfor='category'>Category</FormLabel>
-                            <FormInput type='text'name="category" id="category" onChange={handleChange}/>
+                    <div className="location">
+                        <FormLabel htmlForfor='location'>Location</FormLabel>
+                        <FormInput type='text' name="location" id="location" onChange={handleChange}/>
+                    </div>
 
-                            <FormLabel htmlForfor='picture'>Set picture</FormLabel>
-                            <FormInput type='text' name="picture" id="picture" onChange={handleChange}/>
+                    <div className="category">
+                        <FormLabel htmlForfor='category'>Category</FormLabel>
+                        <FormInput type='text'name="category" id="category" onChange={handleChange}/>
+                    </div>
 
-                            <FormLabel htmlForfor='priority'>Priority</FormLabel>  
-                            <FormInput type='text' name="priority" id="priority" onChange={handleChange}/>   
-                        </div>
-                        <AddBtn type="submit" className="addBtn">Add event</AddBtn>
+                    <div className="picture">
+                        <FormLabel  htmlForfor='picture'>Add picture</FormLabel>
+                        <FormInput disabled type='text' name="picture" id="picture" onChange={handleChange}/>
+                    </div>
+
+                    <div className="priority">
+                        <FormLabel htmlForfor='priority'>Priority</FormLabel>  
+                        <FormInput type='text' name="priority" id="priority" onChange={handleChange}/>   
+                    </div>
+
+                    <AddBtn type="submit" className="addBtn">Add event</AddBtn>
             </Form>
         </CreateEventWrapper>
     )
