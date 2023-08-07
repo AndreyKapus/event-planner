@@ -22,7 +22,6 @@ export const CategoryBtn = styled.button`
     cursor: pointer;
 
     @media screen and (min-width: 768px) {
-        justify-content: space-between;
         display: block;
         width: 143px;
     };
@@ -38,6 +37,7 @@ export const BtnContentText = styled.p`
     display: ${(props) => !props.isFilterOpen ? 'none' : 'block'};
 
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
+        margin-left: 10px;
         display: block;
     };
 `;
