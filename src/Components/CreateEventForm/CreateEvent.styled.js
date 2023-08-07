@@ -124,6 +124,18 @@ export const FormLabel = styled.label`
     color: ${p => p.theme.colors.accent};
 `;
 
+export const Textarea = styled.textarea`
+    display: block;
+    width: 100%;
+    height: ${(props) => !props.desc ? '56px' : '156px'};
+    margin-bottom: 20px;
+    padding: 16px 12px 16px 12px;
+    border: 1px solid black;
+    border-radius: 8px;
+    border-color: ${p => p.theme.colors.primaryText};
+    box-sizing: border-box;
+`;
+
 export const FormInput = styled.input`
     display: block;
     width: 100%;

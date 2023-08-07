@@ -6,6 +6,7 @@ import { CreateEventWrapper,
         FormLabel,
         FormInput,
         AddBtn,
+        Textarea
     } from "./CreateEvent.styled";
 import GoBackBtn from "../GoBack/GoBack";
 import { useNavigate } from "react-router-dom";
@@ -77,7 +78,7 @@ const CreateEventForm = () => {
 
                     <div className="description">
                         <FormLabel htmlForfor='description'>Description</FormLabel>
-                        <FormInput type='text' name="description" id='description' desc onChange={handleChange}/>
+                        <Textarea type='text' name="description" id='description' desc onChange={handleChange}/>
                     </div>
 
                     <div className="date">

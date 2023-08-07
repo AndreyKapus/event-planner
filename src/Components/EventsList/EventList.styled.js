@@ -95,6 +95,8 @@ export const EventCard = styled.li`
         backGround-color: white;
         position: absolute;
         top: 240px;
+        max-width: 240px;
+        max-height: 50px;
     };
 
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
@@ -188,6 +190,9 @@ export const EventText = styled.p`
     font-weight: ${p => p.theme.fontWaight.regular};
     font-size: ${p => p.theme.fontSizes.textSize};
     color: ${p => p.theme.colors.textColor};
+    max-width: 240px;
+    max-height: 50px;
+    overflow: hidden;
 `;
 
 
