@@ -7,7 +7,7 @@ export const Container = styled.div`
 
     @media screen and (min-width: 768px) {
         width: 513px;
-    }
+    };
 `;
 
 export const ControlsWrapper = styled.div`

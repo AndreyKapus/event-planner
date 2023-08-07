@@ -41,8 +41,18 @@ export const EventList = styled.ul`
     padding-left: 0px;
     padding-right: 0px;
     justify-content: start;
-}
-    
+};
+
+@media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+    margin-top: 24px;
+    padding-left: 0px;
+    padding-right: 0px;
+    justify-content: start;
+};
 `
 
 export const EventCard = styled.li`
@@ -81,7 +91,15 @@ export const EventCard = styled.li`
     };
 
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
-        width: 332px;
+        width: auto;
+        
+        margin-top: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+    };
+    @media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
+        width: auto;
         margin-top: 0px;
         margin-left: 0px;
         margin-right: 0px;
