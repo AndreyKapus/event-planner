@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.header`
+    padding-top: 24px;
+    padding-bottom: 24px;
     padding-left: 24px;
     padding-right: 24px;
 
@@ -22,6 +24,21 @@ export const Container = styled.header`
         right: 0px;
         top: 168px;
         border-bottom: 1px solid ${p => p.theme.colors.accent};
+
+        @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
+            top: 92px;
+        }
+    };
+
+    @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
+        position: relative;
+    };
+`;
+
+export const HeaderWrapper = styled.div`
+    @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
+        display: flex;
+        justify-content: space-between;
     };
 `;
 
@@ -33,7 +50,11 @@ export const Wrapper = styled.div`
 
 export const Title = styled.h1`
     font-size: ${p => p.theme.fontSizes.titleSize};
-    color: ${p => p.theme.colors.accent}
+    color: ${p => p.theme.colors.accent};
+
+    @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
+       
+    };
 `;
 
 export const Select = styled.select`
@@ -44,6 +65,15 @@ export const Select = styled.select`
     font-size: ${p => p.theme.fontSizes.subtitleSize};
     font-weight: ${p => p.theme.fontWaight.medium};
     color: ${p => p.theme.colors.secondaryText};
+
+    @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
+        position: absolute;
+        right: 40px;
+    };
+
+    @media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
+        right: 80px;
+    };
 `;
 
 export const Options = styled.option`
@@ -60,4 +90,14 @@ export const Input = styled.input`
     border-radius: 10px;
     box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
     padding-left: 10px;
+
+    @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
+        width: 368px;
+        margin-top: 0px;
+        margin-right: 94px;
+    };
+
+    @media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
+        width: 410px;
+    };
 `;

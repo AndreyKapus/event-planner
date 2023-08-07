@@ -5,20 +5,22 @@ import {Container,
         Title,
         Input,
         Options,
-  
+        HeaderWrapper,
 } from './Header.styled'
 
 const Header = () => {
     return (
             <Container>
-                <Wrapper>
-                    <Title>Event planner</Title>
-                    <Select>
-                        <Options value='UK'>UK</Options>
-                        <Options value='UK'>UA</Options>
-                    </Select>
-                </Wrapper>
-                <Input type="text" placeholder="search by tags"/> 
+                <HeaderWrapper>
+                    <Wrapper>
+                        <Title>Event planner</Title>
+                        <Select>
+                            <Options value='UK'>UK</Options>
+                            <Options value='UK'>UA</Options>
+                        </Select>
+                    </Wrapper>
+                    <Input type="text" placeholder="Search by keywords"/> 
+                </HeaderWrapper>
                 <Outlet/>
             </Container>
     )

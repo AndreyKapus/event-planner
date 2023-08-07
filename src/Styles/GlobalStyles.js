@@ -37,8 +37,6 @@ img {
 
 export const Container = styled.div`
 width: ${p => p.theme.screens.mobWidth};
-margin-top: 24px;
-margin-bottom: 24px;
 margin-left: auto;
 margin-right: auto;
 
