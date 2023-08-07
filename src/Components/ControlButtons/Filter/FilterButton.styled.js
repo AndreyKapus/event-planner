@@ -19,6 +19,7 @@ export const CategoryBtn = styled.button`
     box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
     background-color: ${p => p.theme.colors.white};
     padding: 16px;
+    cursor: pointer;
 
     @media screen and (min-width: 768px) {
         justify-content: space-between;

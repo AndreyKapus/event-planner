@@ -118,6 +118,12 @@ export const DeleteEventBtn = styled.button`
     color: ${p => p.theme.colors.white};
     background-color: ${p => p.theme.colors.accent};
     float: right;
+    &:hover {
+        background-color: ${p => p.theme.colors.hover};
+    };
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: linear;
 `;
 
 

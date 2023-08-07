@@ -17,6 +17,7 @@ export const SortBtnStyled = styled.button`
     visibility: ${(props) => props.isFilterOpen ? 'hidden' : 'visible'};
     opacity: ${(props) => props.isFilterOpen ? '0' : '1'};
     padding: 16px;
+    cursor: pointer;
 
     @media screen and (min-width: 768px) {
         width: 129px;

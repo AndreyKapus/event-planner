@@ -148,6 +148,14 @@ export const AddBtn = styled.button`
     font-weight: ${p => p.theme.fontWaight.medium};
     font-size: ${p => p.theme.fontSizes.subtitleSize};
     float: right;
+    cursor: pointer;
+    
+    &:hover {
+        background-color: ${p => p.theme.colors.hover};
+    };
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: linear;
 
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
         margin-top: 20px;

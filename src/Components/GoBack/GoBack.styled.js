@@ -7,6 +7,7 @@ export const BackBtn = styled.button`
     background-color: transparent;
     border: none;
     padding: 0px;
+    cursor: pointer;
 `;
 
 export const BackText = styled.span`

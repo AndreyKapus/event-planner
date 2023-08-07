@@ -29,7 +29,12 @@ export const AddBtn = styled(NavLink)`
     background-color: ${p => p.theme.colors.accent};
     margin-left: 24px;
     text-decoration: none;
-    
+    &:hover {
+        background-color: ${p => p.theme.colors.hover};
+    };
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: linear;
 
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
         width: 193px;

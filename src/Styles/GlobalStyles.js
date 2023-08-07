@@ -11,6 +11,8 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url(${background});
+  background-size: contain;
 };
 
 h1,
@@ -40,10 +42,6 @@ export const Container = styled.div`
 width: ${p => p.theme.screens.mobWidth};
 margin-left: auto;
 margin-right: auto;
-
-background-image: url(${background});
-
-background-size: contain;
 
 @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
     width: ${p => p.theme.screens.tabWidth};

@@ -29,6 +29,12 @@ export const MoreInfoBtn = styled(NavLink)`
     font-weight: ${p => p.theme.fontWaight.medium};
     font-size: ${p => p.theme.fontSizes.textSize};
     text-decoration: none;
+    &:hover {
+        background-color: ${p => p.theme.colors.hover};
+    };
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: linear;
 `;
 
 export const EventList = styled.ul`

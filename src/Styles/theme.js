@@ -1,7 +1,6 @@
 export const theme = {
     colors: {
         accent: '#7B61FF',
-        hover: '#6243FF',
         red: '#FF2B77',
         yellow: '#E2A300',
         green: '#6BD475',
@@ -10,6 +9,7 @@ export const theme = {
         textColor: '#49454F',
         titleColor: '#1C1B1F',
         white: '#FFFFFF',
+        hover: '#9747FF',
     },
 
     fontSizes: {
