@@ -133,6 +133,9 @@ export const Sticker = styled.p`
     padding-left: 12px;
     font-weight: ${p => p.theme.fontWaight.medium};
     font-size: ${p => p.theme.fontSizes.textSize};
+    background-color: red;
+    color: white;
+    
 `;
 
 export const ImgWrapper = styled.div`
