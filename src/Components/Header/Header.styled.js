@@ -51,9 +51,12 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled(NavLink)`
+    font-family: Alata;
     font-size: ${p => p.theme.fontSizes.titleSize};
+    font-weight: ${p => p.theme.fontWaight.regular};
     color: ${p => p.theme.colors.accent};
     text-decoration: none;
+
 
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
        

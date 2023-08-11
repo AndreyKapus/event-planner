@@ -7,6 +7,7 @@ import {Container,
         Options,
         HeaderWrapper,
 } from './Header.styled'
+import IconSearch from '../../Icons/IconSearch';
 
 const Header = () => {
     return (
@@ -19,6 +20,7 @@ const Header = () => {
                             <Options value='UK'>UA</Options>
                         </Select>
                     </Wrapper>
+                    <span><IconSearch/></span>
                     <Input type="text" placeholder="Search by keywords"/> 
                 </HeaderWrapper>
                 <Outlet/>
