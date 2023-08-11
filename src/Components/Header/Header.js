@@ -13,7 +13,7 @@ const Header = () => {
             <Container>
                 <HeaderWrapper>
                     <Wrapper>
-                        <Title>Event planner</Title>
+                        <Title to='/'>Event planner</Title>
                         <Select>
                             <Options value='UK'>UK</Options>
                             <Options value='UK'>UA</Options>

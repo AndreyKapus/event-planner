@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 
 export const Container = styled.header`
     padding-top: 24px;
@@ -49,9 +50,10 @@ export const Wrapper = styled.div`
     align-items: center;
 `;
 
-export const Title = styled.h1`
+export const Title = styled(NavLink)`
     font-size: ${p => p.theme.fontSizes.titleSize};
     color: ${p => p.theme.colors.accent};
+    text-decoration: none;
 
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
        

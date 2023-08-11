@@ -4,8 +4,13 @@ import EventPage from './Pages/EventPage/EventPage'
 import CreateEventPage from "./Pages/CreateEventPage/CreateEventPage";
 import Header from "./Components/Header/Header";
 import { Container } from "./Styles/GlobalStyles";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    document.title = "Event planner";
+  }, []);
+  
   return (
     <Container>
       <Routes>
