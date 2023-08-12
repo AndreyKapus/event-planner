@@ -28,6 +28,8 @@ const EventsList = () => {
         // setInitialId()
     };
 
+
+
     return (
         <EventSection>
             <EventListTittle>My events</EventListTittle>
