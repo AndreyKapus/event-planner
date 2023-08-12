@@ -8,7 +8,7 @@ import { CreateEventWrapper,
         FormLabel,
         FormInput,
         AddBtn,
-        Textarea
+        Textarea,
     } from "./CreateEvent.styled";
 import GoBackBtn from "../GoBack/GoBack";
 import { useNavigate } from "react-router-dom";
@@ -73,7 +73,8 @@ const CreateEventForm = () => {
 
     const selectDate = () => {
         setChangeDate(true)
-    }
+    };
+
 
     return(
         <CreateEventWrapper>
@@ -93,7 +94,7 @@ const CreateEventForm = () => {
                     <div className="date">
                         <FormLabel htmlForfor='date'>Select date</FormLabel>
                         {/* <FormInput type='text' name="date" id="date" onChange={handleChange}/> */}
-                        <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
+                        <DatePicker className="date-picker" selected={startDate} onChange={(date) => setStartDate(date)} />
                     </div>
 
                     <div className="time">

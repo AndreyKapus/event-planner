@@ -36,6 +36,10 @@ img {
   max-width: 100%;
   height: auto;
 };
+
+.date-picker {
+  width: 300px;
+};
 `
 
 export const Container = styled.div`
