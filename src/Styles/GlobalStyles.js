@@ -38,7 +38,20 @@ img {
 };
 
 .date-picker {
-  width: 300px;
+  display: block;
+  width: 100%;
+  height: 56px;
+  margin-bottom: 20px;
+  padding: 16px 12px 16px 12px;
+  border: 1px solid black;
+  border-radius: 8px;
+  border-color: #ACA7C3;
+  box-sizing: border-box;
+  color: #7B61FF;
+};
+
+.react-datepicker-wrapper {
+  width: 100%;
 };
 `
 

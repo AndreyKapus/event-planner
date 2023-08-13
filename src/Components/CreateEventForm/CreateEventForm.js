@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEvents } from "../../Store/EventsStore";
 import DatePicker from "react-datepicker";
-import 'react-datepicker/dist/react-datepicker-cssmodules.css';
+import "react-datepicker/dist/react-datepicker.css";
 import { CreateEventWrapper,
         Form,
         CreateEventTitle,
@@ -23,7 +23,6 @@ const CreateEventForm = () => {
     const [category, setCategory] = useState('');
     const [picture, setPicture] = useState('');
     const [priority, setPriority] = useState('');
-    const [changeDate, setChangeDate] = useState(false)
 
     const [startDate, setStartDate] = useState(new Date());
 
@@ -70,11 +69,6 @@ const CreateEventForm = () => {
         add(event);
         navigate(-1)
     };
-
-    const selectDate = () => {
-        setChangeDate(true)
-    };
-
 
     return(
         <CreateEventWrapper>
