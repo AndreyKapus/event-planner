@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { useEvents } from "../../Store/EventsStore";
+import { useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
+import parseISO from 'date-fns/parseISO'
 import "react-datepicker/dist/react-datepicker.css";
+import SelectDown from '../../Icons/SelectDown'
 import { CreateEventWrapper,
         Form,
         CreateEventTitle,
@@ -9,22 +12,23 @@ import { CreateEventWrapper,
         FormInput,
         AddBtn,
         Textarea,
+        DatePickerWrapper,
     } from "./CreateEvent.styled";
 import GoBackBtn from "../GoBack/GoBack";
-import { useNavigate } from "react-router-dom";
+
+
 
 
 const CreateEventForm = () => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
-    const [date, setDate] = useState('');
+    // const [date, setDate] = useState('');
     const [time, setTime] = useState('');
     const [location, setLocation] = useState('');
     const [category, setCategory] = useState('');
     const [picture, setPicture] = useState('');
     const [priority, setPriority] = useState('');
-
-    const [startDate, setStartDate] = useState(new Date());
+    const [startDate, setStartDate] = useState(null);
 
     const navigate = useNavigate();
 
@@ -40,9 +44,9 @@ const CreateEventForm = () => {
             case 'description':
                 setDescription(value);
             break;
-            case 'date':
-                setDate(value);
-            break;
+            // case 'date':
+            //     setDate(value);
+            // break;
             case 'time':
                 setTime(value);
             break;
@@ -61,13 +65,13 @@ const CreateEventForm = () => {
 
             default: return
         };
-    }
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const event = {title, description, date, time, location, category, picture, priority}
+        const event = {title, description, startDate, time, location, category, picture, priority};
         add(event);
-        navigate(-1)
+        navigate(-1);
     };
 
     return(
@@ -85,11 +89,19 @@ const CreateEventForm = () => {
                         <Textarea type='text' name="description" id='description' desc onChange={handleChange}/>
                     </div>
 
-                    <div className="date">
+                    <DatePickerWrapper className="date">
                         <FormLabel htmlForfor='date'>Select date</FormLabel>
                         {/* <FormInput type='text' name="date" id="date" onChange={handleChange}/> */}
-                        <DatePicker className="date-picker" selected={startDate} onChange={(date) => setStartDate(date)} />
-                    </div>
+                        <DatePicker className="date-picker" 
+                            name='date'
+                            id="date"
+                            selected={startDate} 
+                            onChange={(date) => setStartDate(date)} 
+                            dateFormat="yyyy/MM/dd"
+                            placeholderText="Select date"
+                            />
+                        <SelectDown/>
+                    </DatePickerWrapper>
 
                     <div className="time">
                         <FormLabel htmlForfor='time' >Select time</FormLabel>

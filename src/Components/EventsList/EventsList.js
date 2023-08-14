@@ -23,12 +23,15 @@ const EventsList = () => {
     const events = useEvents(state => state.events);
     const setEventId = useId((state) => state.setId);
 
+    // const evDate = events.startDate.getDate();
+    // console.log(evDate)
+
     const handleEventDetails = (id) => {
         setEventId(id);
         // setInitialId()
     };
 
-
+    console.log(events)
 
     return (
         <EventSection>

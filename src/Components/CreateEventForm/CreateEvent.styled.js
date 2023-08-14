@@ -148,6 +148,27 @@ export const FormInput = styled.input`
     box-sizing: border-box;
 `;
 
+export const DatePickerWrapper = styled.div`
+    position: relative;
+
+    & .date-picker {
+        display: block;
+        width: 100%;
+        height: 56px;
+        margin-bottom: 20px;
+        padding: 16px 12px 16px 12px;
+        border: 1px solid black;
+        border-radius: 8px;
+        border-color: #ACA7C3;
+        box-sizing: border-box;
+        color: #7B61FF;
+      };
+      
+      .react-datepicker-wrapper {
+        width: 100%;
+      };
+`
+
 export const AddBtn = styled.button`
     width: 100%;
     height: 56px;
@@ -176,6 +197,13 @@ export const AddBtn = styled.button`
     @media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
         margin-top: 40px;
     }
+`;
+
+export const SelectDownWrapper = styled.div`
+    position: absolute;
+    right: 10px;
+    top: 40%;
+    pointer-events: none;
 `;
 
 
