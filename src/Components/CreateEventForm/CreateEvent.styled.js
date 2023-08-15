@@ -163,6 +163,11 @@ export const DatePickerWrapper = styled.div`
         box-sizing: border-box;
         color: #7B61FF;
       };
+
+      & .calendar {
+        padding: 5px;
+        border-radius: 8px;
+      };
       
       .react-datepicker-wrapper {
         width: 100%;
@@ -204,6 +209,28 @@ export const SelectDownWrapper = styled.div`
     right: 10px;
     top: 40%;
     pointer-events: none;
+    background-color: white;
+`;
+
+export const PriorityDropWrapper = styled.div`
+    position: relative;
+`;
+
+export const PriorityList = styled.div`
+    position: absolute;
+    top: 0px;
+    list-style: none;
+    width: 100%;
+    background-color: ${p => p.theme.colors.white};
+`;
+
+export const PriorityListItem = styled.div`
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 12px;
+    &:not(:last-child) {
+        border-bottom: 1px solid ${p => p.theme.colors.primaryText};
+    };
 `;
 
 

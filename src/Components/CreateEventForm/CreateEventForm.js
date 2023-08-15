@@ -14,6 +14,7 @@ import { CreateEventWrapper,
         DatePickerWrapper,
     } from "./CreateEvent.styled";
 import GoBackBtn from "../GoBack/GoBack";
+import PriorityDrop from "./PriorityDrop";
 
 
 
@@ -28,6 +29,8 @@ const CreateEventForm = () => {
     const [picture, setPicture] = useState('');
     const [priority, setPriority] = useState('');
     const [startDate, setStartDate] = useState(null);
+    const [priorityInputOnFocus, setPriorityInputOnFocus] = useState(false);
+    const [selectedPriority, setSelectedPriority] = useState('')
 
     const navigate = useNavigate();
 
@@ -42,9 +45,6 @@ const CreateEventForm = () => {
             break;
             case 'description':
                 setDescription(value);
-            break;
-            case 'date':
-                setStartDate(value);
             break;
             case 'time':
                 setTime(value);
@@ -70,7 +70,6 @@ const CreateEventForm = () => {
         e.preventDefault();
         const event = {title, description, startDate, time, location, category, picture, priority};
         add(event);
-        console.log(event.startDate)
         navigate(-1);
     };
 
@@ -80,21 +79,20 @@ const CreateEventForm = () => {
             <CreateEventTitle>Create new event</CreateEventTitle>
             <Form onSubmit={handleSubmit}>
                     <div className="title">
-                        <FormLabel htmlForfor='title'>Title</FormLabel>
+                        <FormLabel htmlFor='title'>Title</FormLabel>
                         <FormInput type='text' name="title" id='title' onChange={handleChange}/>
                     </div>
 
                     <div className="description">
-                        <FormLabel htmlForfor='description'>Description</FormLabel>
+                        <FormLabel htmlFor='description'>Description</FormLabel>
                         <Textarea type='text' name="description" id='description' desc onChange={handleChange}/>
                     </div>
 
                     <DatePickerWrapper className="date">
-                        <FormLabel htmlForfor='date'>Select date</FormLabel>
-                        {/* <FormInput type='text' name="date" id="date" onChange={handleChange}/> */}
-                        <DatePicker className="date-picker" 
-                            name='date'
-                            id="date"
+                        <FormLabel htmlFor='date'>Select date</FormLabel>
+                        <DatePicker className="date-picker"
+                            calendarClassName="calendar" 
+                            autocomplete="off"
                             dateFormat="yyyy/MM/dd"
                             placeholderText="Select date"
                             selected={startDate} 
@@ -103,29 +101,37 @@ const CreateEventForm = () => {
                         <SelectDown/>
                     </DatePickerWrapper>
 
-                    <div className="time">
-                        <FormLabel htmlForfor='time' >Select time</FormLabel>
+                    <DatePickerWrapper className="time">
+                        <FormLabel htmlFor='time' >Select time</FormLabel>
                         <FormInput type='time' name="time" id="time" onChange={handleChange}/>
-                    </div>
+                        <SelectDown/>
+                    </DatePickerWrapper>
 
                     <div className="location">
-                        <FormLabel htmlForfor='location'>Location</FormLabel>
+                        <FormLabel htmlFor='location'>Location</FormLabel>
                         <FormInput type='text' name="location" id="location" onChange={handleChange}/>
                     </div>
 
                     <div className="category">
-                        <FormLabel htmlForfor='category'>Category</FormLabel>
+                        <FormLabel htmlFor='category'>Category</FormLabel>
                         <FormInput type='text'name="category" id="category" onChange={handleChange}/>
                     </div>
 
                     <div className="picture">
-                        <FormLabel  htmlForfor='picture'>Add picture</FormLabel>
+                        <FormLabel  htmlFor='picture'>Add picture</FormLabel>
                         <FormInput disabled type='text' name="picture" id="picture" onChange={handleChange}/>
                     </div>
 
                     <div className="priority">
-                        <FormLabel htmlForfor='priority'>Priority</FormLabel>  
-                        <FormInput type='text' name="priority" id="priority" onChange={handleChange}/>   
+                        <FormLabel htmlFor='priority'>Priority</FormLabel>  
+                        <FormInput type='text' 
+                            name="priority" 
+                            id="priority" 
+                            onChange={handleChange} 
+                            onClick={() => setPriorityInputOnFocus(!priorityInputOnFocus)}/>   
+                        <PriorityDrop openDropDown={priorityInputOnFocus}
+                        selectedPriority={selectedPriority}
+                        setSelectedPriority={setSelectedPriority}/>
                     </div>
 
                     <AddBtn type="submit" className="addBtn">Add event</AddBtn>
