@@ -23,15 +23,14 @@ const EventsList = () => {
     const events = useEvents(state => state.events);
     const setEventId = useId((state) => state.setId);
 
-    // const evDate = events.startDate.getDate();
-    // console.log(evDate)
-
     const handleEventDetails = (id) => {
         setEventId(id);
         // setInitialId()
     };
-
-    console.log(events)
+    
+    function pad (value) {
+        return String(value).padStart(2, '0')
+    }
 
     return (
         <EventSection>
@@ -43,7 +42,7 @@ const EventsList = () => {
                             <img src={defaultImg} alt='default'/>
                             <MeetInfoWrapper className='MeetInfoWrapper'>
                                 <MeetTimeWrapper>
-                                    <MeetDate>{event.date}</MeetDate>
+                                    <MeetDate>{pad(event.date)}.{pad(event.year)}</MeetDate>
                                     <MeetTime>at {event.time}</MeetTime>
                                 </MeetTimeWrapper>
                                 <MeetLocation>{event.location}</MeetLocation>

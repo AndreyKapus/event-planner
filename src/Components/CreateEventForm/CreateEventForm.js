@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useEvents } from "../../Store/EventsStore";
 import { useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
-import parseISO from 'date-fns/parseISO'
 import "react-datepicker/dist/react-datepicker.css";
 import SelectDown from '../../Icons/SelectDown'
 import { CreateEventWrapper,
@@ -44,9 +43,9 @@ const CreateEventForm = () => {
             case 'description':
                 setDescription(value);
             break;
-            // case 'date':
-            //     setDate(value);
-            // break;
+            case 'date':
+                setStartDate(value);
+            break;
             case 'time':
                 setTime(value);
             break;
@@ -71,6 +70,7 @@ const CreateEventForm = () => {
         e.preventDefault();
         const event = {title, description, startDate, time, location, category, picture, priority};
         add(event);
+        console.log(event.startDate)
         navigate(-1);
     };
 
@@ -95,10 +95,10 @@ const CreateEventForm = () => {
                         <DatePicker className="date-picker" 
                             name='date'
                             id="date"
-                            selected={startDate} 
-                            onChange={(date) => setStartDate(date)} 
                             dateFormat="yyyy/MM/dd"
                             placeholderText="Select date"
+                            selected={startDate} 
+                            onChange={(date) => setStartDate(date)} 
                             />
                         <SelectDown/>
                     </DatePickerWrapper>
