@@ -16,21 +16,16 @@ import { CreateEventWrapper,
 import GoBackBtn from "../GoBack/GoBack";
 import PriorityDrop from "./PriorityDrop";
 
-
-
-
 const CreateEventForm = () => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
-    // const [date, setDate] = useState('');
     const [time, setTime] = useState('');
     const [location, setLocation] = useState('');
     const [category, setCategory] = useState('');
     const [picture, setPicture] = useState('');
     const [priority, setPriority] = useState('');
     const [startDate, setStartDate] = useState(null);
-    const [priorityInputOnFocus, setPriorityInputOnFocus] = useState(false);
-    const [selectedPriority, setSelectedPriority] = useState('')
+
 
     const navigate = useNavigate();
 
@@ -123,15 +118,7 @@ const CreateEventForm = () => {
                     </div>
 
                     <div className="priority">
-                        <FormLabel htmlFor='priority'>Priority</FormLabel>  
-                        <FormInput type='text' 
-                            name="priority" 
-                            id="priority" 
-                            onChange={handleChange} 
-                            onClick={() => setPriorityInputOnFocus(!priorityInputOnFocus)}/>   
-                        <PriorityDrop openDropDown={priorityInputOnFocus}
-                        selectedPriority={selectedPriority}
-                        setSelectedPriority={setSelectedPriority}/>
+                        <PriorityDrop handleChange={handleChange}/>
                     </div>
 
                     <AddBtn type="submit" className="addBtn">Add event</AddBtn>
