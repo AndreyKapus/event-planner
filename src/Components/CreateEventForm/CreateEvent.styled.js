@@ -228,6 +228,10 @@ export const PriorityListItem = styled.div`
     padding-top: 16px;
     padding-bottom: 16px;
     padding-left: 12px;
+    cursor: pointer;
+    &:hover {
+        color: ${p => p.theme.colors.accent};
+    };
     &:not(:last-child) {
         border-bottom: 1px solid ${p => p.theme.colors.primaryText};
     };

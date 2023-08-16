@@ -15,7 +15,6 @@ import { CreateEventWrapper,
     } from "./CreateEvent.styled";
 import GoBackBtn from "../GoBack/GoBack";
 import PriorityDrop from "./PriorityDrop";
-
 const CreateEventForm = () => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
@@ -25,7 +24,6 @@ const CreateEventForm = () => {
     const [picture, setPicture] = useState('');
     const [priority, setPriority] = useState('');
     const [startDate, setStartDate] = useState(null);
-
 
     const navigate = useNavigate();
 
@@ -55,6 +53,7 @@ const CreateEventForm = () => {
             break;
             case 'priority':
                 setPriority(value);
+                console.log(value);
             break;
 
             default: return
@@ -118,7 +117,7 @@ const CreateEventForm = () => {
                     </div>
 
                     <div className="priority">
-                        <PriorityDrop handleChange={handleChange}/>
+                        <PriorityDrop priority={priority} setPriority={setPriority}/>
                     </div>
 
                     <AddBtn type="submit" className="addBtn">Add event</AddBtn>

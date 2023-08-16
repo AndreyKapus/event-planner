@@ -2,7 +2,7 @@ import { useState } from "react";
 import { PriorityDropWrapper, PriorityList, PriorityListItem } from "./CreateEvent.styled";
 import { FormLabel, FormInput } from "./CreateEvent.styled";
 
-const PriorityDrop = (handleChange) => {
+const PriorityDrop = ({priority, setPriority, handleChange}) => {
     const [priorityInputOnFocus, setPriorityInputOnFocus] = useState(false);
     const [selectedPriority, setSelectedPriority] = useState('Select priority');
 
@@ -12,19 +12,20 @@ const PriorityDrop = (handleChange) => {
         <div>
             <FormLabel htmlFor='priority'>Priority</FormLabel>  
                 <FormInput type='text' 
-                    placeholder={selectedPriority}
+                    value={selectedPriority}
                     autoComplete="off"
                     name="priority" 
                     id="priority" 
-                    onChange={handleChange} 
-                    onClick={() => setPriorityInputOnFocus(!priorityInputOnFocus)}/>  
+                    onClick={() => setPriorityInputOnFocus(!priorityInputOnFocus)}
+                    onChange={() => handleChange()} 
+                />  
                     
-
             {priorityInputOnFocus && 
                 <PriorityDropWrapper>
                     <PriorityList>
                         {options.map((option) => (
-                            <PriorityListItem onClick={(e) => {
+                            <PriorityListItem key={option} onClick={(e) => {
+                                setPriority(option)
                                 setSelectedPriority(option)
                                 setPriorityInputOnFocus(false)
                                 }}>

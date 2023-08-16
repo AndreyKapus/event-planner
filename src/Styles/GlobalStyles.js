@@ -5,8 +5,12 @@ import background from '../../src/Images/background.jpg'
 export const GlobalStyles = css`
 @import-normalize;
 
-body {
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+body {
   font-family: Poppins;
   margin: 0;
   -webkit-font-smoothing: antialiased;
