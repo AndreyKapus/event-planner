@@ -133,9 +133,18 @@ export const Sticker = styled.p`
     padding-left: 12px;
     font-weight: ${p => p.theme.fontWaight.medium};
     font-size: ${p => p.theme.fontSizes.textSize};
-    background-color: red;
-    color: white;
-    
+    color: ${(props) => {
+        switch(props.priority) {
+            case 'Low':
+                return '#6BD475'
+            case 'Medium':
+               return '#E2A300'
+            case 'High':
+                return '#FF2B77'
+              
+            default: return '#7B61FF';
+        };}
+    };
 `;
 
 export const ImgWrapper = styled.div`

@@ -144,8 +144,22 @@ export const FormInput = styled.input`
     padding: 16px 12px 16px 12px;
     border: 1px solid black;
     border-radius: 8px;
+    color: ${p => p.theme.colors.primaryText};
     border-color: ${p => p.theme.colors.primaryText};
     box-sizing: border-box;
+    font-weight: ${p => p.theme.fontWaight.regular};
+    font-size: ${p => p.theme.fontSizes.subtitleSize};
+    & .Low {
+        background-color: #21DB00;
+    };
+
+    & .Medium {
+        background-color: blue;
+    };
+
+    & .High {
+        background-color: red;
+    };
 `;
 
 export const DatePickerWrapper = styled.div`
@@ -222,6 +236,8 @@ export const PriorityList = styled.div`
     list-style: none;
     width: 100%;
     background-color: ${p => p.theme.colors.white};
+    box-shadow: 2px 4px 9px 0px #A68DAE47;
+    border-radius: 8px;
 `;
 
 export const PriorityListItem = styled.div`

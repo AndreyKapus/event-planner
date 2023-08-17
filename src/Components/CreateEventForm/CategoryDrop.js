@@ -7,11 +7,18 @@ const CategoryDrop = ({setCategory, handleChange}) => {
     const [selectedCategory, setSelectedCategory] = useState('Select category');
 
     const options = ['Business', 'Sport', 'Music', 'Study'];
+
+    const handleCategoryInputChange = (option) => {
+        setCategory(option)
+        setSelectedCategory(option)
+        setCategoryInputOnFocus(false)
+    }
     
     return (
         <div>
             <FormLabel htmlFor='priority'>Category</FormLabel>  
                 <FormInput type='text' 
+                    readOnly
                     value={selectedCategory}
                     autoComplete="off"
                     name="priority" 
@@ -25,9 +32,7 @@ const CategoryDrop = ({setCategory, handleChange}) => {
                     <PriorityList>
                         {options.map((option) => (
                             <PriorityListItem key={option} onClick={(e) => {
-                                setCategory(option)
-                                setSelectedCategory(option)
-                                setCategoryInputOnFocus(false)
+                                handleCategoryInputChange(option)
                                 }}>
                                 {option}
                             </PriorityListItem>

@@ -7,11 +7,18 @@ const PriorityDrop = ({setPriority, handleChange}) => {
     const [selectedPriority, setSelectedPriority] = useState('Select priority');
 
     const options = ['Low', 'Medium', 'High'];
+
+    const handlePriorityInputChange = (option) => {
+        setPriority(option);
+        setSelectedPriority(option);
+        setPriorityInputOnFocus(false);
+    };
     
     return (
         <div>
             <FormLabel htmlFor='priority'>Priority</FormLabel>  
                 <FormInput type='text' 
+                    readOnly
                     value={selectedPriority}
                     autoComplete="off"
                     name="priority" 
@@ -25,9 +32,7 @@ const PriorityDrop = ({setPriority, handleChange}) => {
                     <PriorityList>
                         {options.map((option) => (
                             <PriorityListItem key={option} onClick={(e) => {
-                                setPriority(option)
-                                setSelectedPriority(option)
-                                setPriorityInputOnFocus(false)
+                                handlePriorityInputChange(option)
                                 }}>
                                 {option}
                             </PriorityListItem>

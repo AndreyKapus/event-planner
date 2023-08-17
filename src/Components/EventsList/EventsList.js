@@ -54,7 +54,7 @@ const EventsList = () => {
                         </EventDescrWrapper>
                         <StickersWrapper>
                             <Sticker>{event.category}</Sticker>
-                            <Sticker>{event.priority}</Sticker>
+                            <Sticker priority={event.priority}>{event.priority}</Sticker>
                         </StickersWrapper>
 
                         <MoreInfoBtn 
