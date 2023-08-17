@@ -2,32 +2,32 @@ import { useState } from "react";
 import { PriorityDropWrapper, PriorityList, PriorityListItem } from "./CreateEvent.styled";
 import { FormLabel, FormInput } from "./CreateEvent.styled";
 
-const PriorityDrop = ({setPriority, handleChange}) => {
-    const [priorityInputOnFocus, setPriorityInputOnFocus] = useState(false);
-    const [selectedPriority, setSelectedPriority] = useState('Select priority');
+const CategoryDrop = ({setCategory, handleChange}) => {
+    const [categoryInputOnFocus, setCategoryInputOnFocus] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState('Select category');
 
-    const options = ['Low', 'Medium', 'High'];
+    const options = ['Business', 'Sport', 'Music', 'Study'];
     
     return (
         <div>
-            <FormLabel htmlFor='priority'>Priority</FormLabel>  
+            <FormLabel htmlFor='priority'>Category</FormLabel>  
                 <FormInput type='text' 
-                    value={selectedPriority}
+                    value={selectedCategory}
                     autoComplete="off"
                     name="priority" 
                     id="priority" 
-                    onClick={() => setPriorityInputOnFocus(!priorityInputOnFocus)}
+                    onClick={() => setCategoryInputOnFocus(!categoryInputOnFocus)}
                     onChange={() => handleChange()} 
                 />  
                     
-            {priorityInputOnFocus && 
+            {categoryInputOnFocus && 
                 <PriorityDropWrapper>
                     <PriorityList>
                         {options.map((option) => (
                             <PriorityListItem key={option} onClick={(e) => {
-                                setPriority(option)
-                                setSelectedPriority(option)
-                                setPriorityInputOnFocus(false)
+                                setCategory(option)
+                                setSelectedCategory(option)
+                                setCategoryInputOnFocus(false)
                                 }}>
                                 {option}
                             </PriorityListItem>
@@ -38,4 +38,4 @@ const PriorityDrop = ({setPriority, handleChange}) => {
     )
 };
 
-export default PriorityDrop;
+export default CategoryDrop;

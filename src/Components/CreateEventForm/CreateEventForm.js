@@ -15,6 +15,7 @@ import { CreateEventWrapper,
     } from "./CreateEvent.styled";
 import GoBackBtn from "../GoBack/GoBack";
 import PriorityDrop from "./PriorityDrop";
+import CategoryDrop from "./CategoryDrop";
 const CreateEventForm = () => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
@@ -107,8 +108,9 @@ const CreateEventForm = () => {
                     </div>
 
                     <div className="category">
-                        <FormLabel htmlFor='category'>Category</FormLabel>
-                        <FormInput type='text'name="category" id="category" onChange={handleChange}/>
+                        <CategoryDrop setCategory={setCategory} handleChange={handleChange}/>
+                        {/* <FormLabel htmlFor='category'>Category</FormLabel>
+                        <FormInput type='text'name="category" id="category" onChange={handleChange}/> */}
                     </div>
 
                     <div className="picture">
