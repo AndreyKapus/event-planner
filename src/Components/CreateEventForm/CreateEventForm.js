@@ -109,8 +109,6 @@ const CreateEventForm = () => {
 
                     <div className="category">
                         <CategoryDrop setCategory={setCategory} handleChange={handleChange}/>
-                        {/* <FormLabel htmlFor='category'>Category</FormLabel>
-                        <FormInput type='text'name="category" id="category" onChange={handleChange}/> */}
                     </div>
 
                     <div className="picture">

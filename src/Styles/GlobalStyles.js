@@ -15,8 +15,8 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url(${background});
-  background-size: cover;
+  // background-image: url(${background});
+  // background-size: cover;
 };
 
 h1,
@@ -40,20 +40,18 @@ img {
   max-width: 100%;
   height: auto;
 };
-
-
-`
+`;
 
 export const Container = styled.div`
-width: ${p => p.theme.screens.mobWidth};
-margin-left: auto;
-margin-right: auto;
+// width: ${p => p.theme.screens.mobWidth};
+// margin-left: auto;
+// margin-right: auto;
 
-@media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
-    width: ${p => p.theme.screens.tabWidth};
-};
+// @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
+//     width: ${p => p.theme.screens.tabWidth};
+// };
 
-@media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
-    width: ${p => p.theme.screens.deskWidth};
-};
+// @media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
+//     width: ${p => p.theme.screens.deskWidth};
+// };
 `;

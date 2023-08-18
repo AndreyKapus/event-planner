@@ -63,7 +63,7 @@ export const EventList = styled.ul`
 
 export const EventCard = styled.li`
     position: relative;
-    width: 271px;
+    // width: 271px;
     height: 480px;
     margin-top: 24px;
     margin-left: auto;
@@ -89,14 +89,30 @@ export const EventCard = styled.li`
 
     &:hover .MeetInfoWrapper {
         top: 200px;
+        @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
+            top: 220px;
+            };
+            @media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
+                top: 200px;
+                };
     };
 
     &:hover .EventDescrWrapper {
+        box-sizing: border-box;
         backGround-color: white;
         position: absolute;
         top: 240px;
-        max-width: 240px;
-        max-height: 50px;
+        width: 280px;
+
+        @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
+        top: 260px;
+        width: 332px;
+        };
+
+        @media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
+            top: 240px;
+            width: 262px;
+            };
     };
 
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
@@ -188,7 +204,6 @@ export const EventDescrWrapper = styled.div`
     padding-bottom: 16px;
     padding-left: 16px;
     padding-right: 16px;
-    width: 100%;
 `;
 
 export const EventTitle = styled.p`

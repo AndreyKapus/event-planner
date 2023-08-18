@@ -3,8 +3,8 @@ import MainPage from "./Pages/MainPage/MainPage";
 import EventPage from './Pages/EventPage/EventPage'
 import CreateEventPage from "./Pages/CreateEventPage/CreateEventPage";
 import Header from "./Components/Header/Header";
-import { Container } from "./Styles/GlobalStyles";
 import { useEffect } from "react";
+import { Container } from "./App.styled";
 
 function App() {
   useEffect(() => {
@@ -12,15 +12,18 @@ function App() {
   }, []);
   
   return (
-    <Container>
+    <div>
+      <Header/>
+      <Container>
       <Routes>
-        <Route path="/" element={<Header/>}>
           <Route index element={<MainPage/>}/>
           <Route path="event" element={<EventPage/>}/>
-          <Route path="add" element={<CreateEventPage/>}/>
-        </Route>
+          <Route path="add" element={<CreateEventPage/>}/>  
+        
       </Routes>
-    </Container>
+      </Container>
+
+    </div>
   );
 }
 

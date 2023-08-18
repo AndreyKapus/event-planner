@@ -2,18 +2,25 @@ import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
 export const Container = styled.header`
-    padding-top: 24px;
-    padding-bottom: 24px;
-    padding-left: 24px;
-    padding-right: 24px;
-    
+    box-sizing: border-box;
+    width: 100%;
+    padding-top: 26px;
+    padding-bottom: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+    width: ${p => p.theme.screens.mobWidth};
+    margin-left: auto;
+    margin-right: auto;
 
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
+        width: ${p => p.theme.screens.tabWidth};
         padding-left: 40px;
         padding-right: 40px;
-    };
 
+    };
     @media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
+        width: ${p => p.theme.screens.deskWidth};
         padding-left: 80px;
         padding-right: 80px;
     };
