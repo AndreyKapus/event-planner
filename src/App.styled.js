@@ -24,4 +24,20 @@ padding-bottom: 24px;
     padding-left: 80px;
     padding-right: 80px;
 };
+`;
+
+export const HeaderContainer = styled.div`
+&::after {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    top: 168px;
+    border-bottom: 1px solid ${p => p.theme.colors.accent};
+
+    @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
+        top: 92px;
+    }
+};
 `

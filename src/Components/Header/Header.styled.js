@@ -25,20 +25,6 @@ export const Container = styled.header`
         padding-right: 80px;
     };
     
-    &::after {
-        content: " ";
-        position: absolute;
-        width: 100%;
-        left: 0px;
-        right: 0px;
-        top: 168px;
-        border-bottom: 1px solid ${p => p.theme.colors.accent};
-
-        @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
-            top: 92px;
-        }
-    };
-
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
         position: relative;
     };
@@ -64,9 +50,8 @@ export const Title = styled(NavLink)`
     color: ${p => p.theme.colors.accent};
     text-decoration: none;
 
-
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
-       
+
     };
 `;
 
@@ -102,7 +87,7 @@ export const Input = styled.input`
     border: none;
     border-radius: 10px;
     box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
-    padding-left: 10px;
+    padding-left: 48px;
 
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
         width: 368px;
@@ -112,5 +97,24 @@ export const Input = styled.input`
 
     @media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
         width: 410px;
+    };
+`;
+
+export const InputWrapper = styled.div`
+    box-sizing: border-box;
+    position: relative;
+`
+
+export const IconWrapper = styled.span`
+    position: absolute;
+    top: 50%;
+    left: 12px;
+
+    @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
+        top: 12px;
+    };
+
+    @media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
+        top: 12px;
     };
 `;

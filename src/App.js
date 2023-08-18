@@ -5,6 +5,7 @@ import CreateEventPage from "./Pages/CreateEventPage/CreateEventPage";
 import Header from "./Components/Header/Header";
 import { useEffect } from "react";
 import { Container } from "./App.styled";
+import {HeaderContainer} from './App.styled'
 
 function App() {
   useEffect(() => {
@@ -13,16 +14,17 @@ function App() {
   
   return (
     <div>
-      <Header/>
+      <HeaderContainer>
+        <Header/>
+      </HeaderContainer>
+      
       <Container>
-      <Routes>
-          <Route index element={<MainPage/>}/>
-          <Route path="event" element={<EventPage/>}/>
-          <Route path="add" element={<CreateEventPage/>}/>  
-        
-      </Routes>
+        <Routes>
+            <Route index element={<MainPage/>}/>
+            <Route path="event" element={<EventPage/>}/>
+            <Route path="add" element={<CreateEventPage/>}/>  
+        </Routes>
       </Container>
-
     </div>
   );
 }

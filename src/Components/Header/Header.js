@@ -6,6 +6,8 @@ import {Container,
         Input,
         Options,
         HeaderWrapper,
+        IconWrapper,
+        InputWrapper,
 } from './Header.styled'
 import IconSearch from '../../Icons/IconSearch';
 
@@ -20,8 +22,10 @@ const Header = () => {
                             <Options value='UK'>UA</Options>
                         </Select>
                     </Wrapper>
-                    <span><IconSearch/></span>
-                    <Input type="text" placeholder="Search by keywords"/> 
+                    <InputWrapper>
+                        <IconWrapper><IconSearch/></IconWrapper>
+                        <Input type="text" placeholder="Search by keywords"/> 
+                    </InputWrapper>
                 </HeaderWrapper>
                 <Outlet/>
             </Container>
