@@ -31,7 +31,7 @@ const Controls = () => {
     return (
         <Container>
             <ControlsWrapper>
-                <FilterIcon toggleFilterOpen={toggleOpen} isFilterOpen={isFilterOpen}/>
+                <FilterIcon toggleFilterOpen={toggleOpen} isFilterOpen={isFilterOpen} setIsFilterOpen={setIsFilterOpen}/>
                 <SortBtn toggleSortOpen={toggleOpen} isSortOpen={isSortOpen} isFilterOpen={isFilterOpen}/>
                 <AddButton/>
             </ControlsWrapper>
