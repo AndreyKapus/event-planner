@@ -6,7 +6,7 @@ const CategoryDrop = ({setCategory, handleChange}) => {
     const [categoryInputOnFocus, setCategoryInputOnFocus] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState('Select category');
 
-    const options = ['Business', 'Sport', 'Music', 'Study'];
+    const options = ['Art', 'Music', 'Business', 'Conference', 'Workshop', 'Sport'];
 
     const handleCategoryInputChange = (option) => {
         setCategory(option)

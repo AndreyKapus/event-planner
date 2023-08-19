@@ -9,18 +9,19 @@ import {Dropdown,
         DropListText,
         BtnContentText,
 } from './FilterButton.styled.js'
+import { useFilter } from '../../../Store/FileterStore';
 
-const filterOptions = ['Art', 'Music', 'Business', 'Conference', 'Workshop']
+const filterOptions = ['Art', 'Music', 'Business', 'Conference', 'Workshop', 'Sport']
 
 const FilterIcon = ({toggleFilterOpen, isFilterOpen, setIsFilterOpen}) => {
-    const [categoryOption, setCategoryOption] = useState(null);
     const [selectCategory, setSelectedCategory] = useState('Category');
+    const setCategory = useFilter((state) => state.setCategoryFilter)
 
     const handleCategoryChange = (option) => {
-        setCategoryOption(option);
         setSelectedCategory(option);
         setIsFilterOpen(false)
-    }
+        setCategory(option)
+    };
 
     return (<Container>
             <Wrapper>
@@ -37,9 +38,8 @@ const FilterIcon = ({toggleFilterOpen, isFilterOpen, setIsFilterOpen}) => {
                         {filterOptions.map((option) => (
                             <DropListItem key={option}  onClick={(e) => {
                                 handleCategoryChange(option)
-
                             }}>
-                                    <DropListText>
+                                    <DropListText className='text'>
                                         {option}
                                     </DropListText>                           
                             </DropListItem>

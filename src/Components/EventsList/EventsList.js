@@ -18,15 +18,20 @@ import { EventCard,
         EventList,
 } from './EventList.styled.js';
 import defaultImg from '../../Images/flowers.jpg';
+import { useFilter } from '../../Store/FileterStore.js';
 
 const EventsList = () => {
     const events = useEvents(state => state.events);
     const setEventId = useId((state) => state.setId);
+    const getCategory = useFilter(state => state.filter);
 
     const handleEventDetails = (id) => {
         setEventId(id);
         // setInitialId()
     };
+
+    const filteredEvents = getCategory !== '' ? 
+    events.filter(event => event.category === getCategory) : events
     
     function pad (value) {
         return String(value).padStart(2, '0')
@@ -36,7 +41,7 @@ const EventsList = () => {
         <EventSection>
             <EventListTittle>My events</EventListTittle>
             <EventList>
-            {events && events.map((event) => (
+            {events && filteredEvents.map((event) => (
                     <EventCard key={event.id}>
                         <ImgWrapper className='imageWrapper'>
                             <img src={defaultImg} alt='default'/>

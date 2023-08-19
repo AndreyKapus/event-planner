@@ -67,6 +67,10 @@ export const DropListItem = styled.li`
     padding-bottom: 9px;
     padding-left: 24px;
     border-bottom: 1px solid ${p => p.theme.colors.primaryText};
+    cursor: pointer;
+    &:hover .text {
+        color: ${p => p.theme.colors.accent}
+    };
 `;
 
 export const DropListText = styled.p`
