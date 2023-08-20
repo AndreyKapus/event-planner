@@ -32,7 +32,7 @@ const Controls = () => {
         <Container>
             <ControlsWrapper>
                 <FilterIcon toggleFilterOpen={toggleOpen} isFilterOpen={isFilterOpen} setIsFilterOpen={setIsFilterOpen}/>
-                <SortBtn toggleSortOpen={toggleOpen} isSortOpen={isSortOpen} isFilterOpen={isFilterOpen}/>
+                <SortBtn toggleSortOpen={toggleOpen} isSortOpen={isSortOpen} isFilterOpen={isFilterOpen} setSortOpen={setIsSortOpen}/>
                 <AddButton/>
             </ControlsWrapper>
         </Container>
