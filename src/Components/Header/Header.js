@@ -3,13 +3,10 @@ import {Container,
         Wrapper,
         Select,
         Title,
-        Input,
         Options,
         HeaderWrapper,
-        IconWrapper,
-        InputWrapper,
 } from './Header.styled'
-import IconSearch from '../../Icons/IconSearch';
+import SearchInput from './SearchInput';
 
 const Header = () => {
     return (
@@ -22,10 +19,7 @@ const Header = () => {
                             <Options value='UK'>UA</Options>
                         </Select>
                     </Wrapper>
-                    <InputWrapper>
-                        <IconWrapper><IconSearch/></IconWrapper>
-                        <Input type="text" placeholder="Search by keywords"/> 
-                    </InputWrapper>
+                    <SearchInput/>
                 </HeaderWrapper>
                 <Outlet/>
             </Container>
