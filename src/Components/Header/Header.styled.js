@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
+import background from '../../Images/background.jpg'
 
 export const Container = styled.header`
     box-sizing: border-box;
@@ -12,7 +13,7 @@ export const Container = styled.header`
     width: ${p => p.theme.screens.mobWidth};
     margin-left: auto;
     margin-right: auto;
-
+    
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
         width: ${p => p.theme.screens.tabWidth};
         padding-left: 40px;

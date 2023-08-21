@@ -13,7 +13,7 @@ export const Container = styled.div`
 export const ControlsWrapper = styled.div`
     display: flex;
     justify-content: end;
-    margin-top: 64px;
+    margin-top: 0px;
     position: relative;
 `;
 

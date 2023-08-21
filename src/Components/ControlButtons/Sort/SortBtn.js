@@ -8,7 +8,6 @@ import {SortBtnStyled,
         BtnContentText,
     } from './SortBy.styled'
 import ArrowUpIcon from '../../../Icons/ArrowUp';
-// import ArrowDownIcon from '../../../Icons/ArrowDown.js';
 import { useSort } from '../../../Store/SortStore';
 import { useState } from 'react';
 

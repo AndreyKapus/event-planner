@@ -1,6 +1,5 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled'
-import background from '../../src/Images/background.jpg'
 
 export const GlobalStyles = css`
 @import-normalize;
@@ -15,8 +14,6 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  // background-image: url(${background});
-  // background-size: cover;
 };
 
 h1,

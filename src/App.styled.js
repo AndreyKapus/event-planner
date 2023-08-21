@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import background from '../src/Images/background.jpg'
 
 export const Container = styled.div`
 box-sizing: border-box;
@@ -24,6 +25,12 @@ padding-bottom: 24px;
     padding-left: 80px;
     padding-right: 80px;
 };
+`;
+
+export const ContainerWrapper = styled.div`
+    padding-top: 64px;
+    background-image: url(${background});
+    background-size: 100% auto;
 `;
 
 export const HeaderContainer = styled.div`
