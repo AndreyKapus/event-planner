@@ -16,6 +16,7 @@ import { CreateEventWrapper,
 import GoBackBtn from "../GoBack/GoBack";
 import PriorityDrop from "./PriorityDrop";
 import CategoryDrop from "./CategoryDrop";
+import ImageDownload from "./ImageDownload";
 const CreateEventForm = () => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
@@ -112,8 +113,9 @@ const CreateEventForm = () => {
                     </div>
 
                     <div className="picture">
-                        <FormLabel  htmlFor='picture'>Add picture</FormLabel>
-                        <FormInput disabled type='text' name="picture" id="picture" onChange={handleChange}/>
+                        <ImageDownload handleChange={handleChange}/>
+                        {/* <FormLabel  htmlFor='picture'>Add picture</FormLabel>
+                        <FormInput disabled type='text' name="picture" id="picture" onChange={handleChange}/> */}
                     </div>
 
                     <div className="priority">

@@ -60,6 +60,8 @@ const EventsList = () => {
         return String(value).padStart(2, '0')
     };
 
+    console.log(events)
+
     return (
         <EventSection>
             <EventListTittle>My events</EventListTittle>
