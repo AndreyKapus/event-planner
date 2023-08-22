@@ -20,7 +20,7 @@ import { EventCard,
 import defaultImg from '../../Images/flowers.jpg';
 import { useFilter } from '../../Store/FileterStore.js';
 import { useSearch } from '../../Store/SearchStore.js';
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const EventsList = () => {
     const events = useEvents(state => state.events);
@@ -33,39 +33,28 @@ const EventsList = () => {
         setEventId(id);
     };
 
-    const changeFilter = useCallback(
-        () => {
-                const filtredElement = events.filter(event => event.category === getCategory);
-                setFilter(filtredElement);     
-            }, [events, getCategory]);
-
-    const changeSearch = useCallback(
-        () => {
-            const searchedEv = filter.filter(event => event.title.toLowerCase().includes(searchInputValue.toLowerCase()))
-            setFilter(searchedEv)
-        }, [filter, searchInputValue]
-    )
-
     useEffect(() => {
         if(getCategory !== '') {
+            const changeFilter = () => {
+                const filtredElement = events.filter(event => event.category === getCategory);
+                setFilter(filtredElement);     
+            };
             changeFilter()
             return;
         };
 
         if(searchInputValue !== '') {
-            changeSearch()
+           const changeSearch = () => {
+            const searchedEv = filter.filter(event => event.title.toLowerCase().includes(searchInputValue.toLowerCase()))
+            setFilter(searchedEv)
+           };
+           changeSearch()
             return;
-        }
+        };
 
         setFilter(events)
-    }, [events, getCategory, searchInputValue])
+    }, [events, getCategory, searchInputValue]) // eslint-disable-line react-hooks/exhaustive-deps
 
-    // const filteredEvents = getCategory !== '' ? 
-    // events.filter(event => event.category === getCategory) : events;
-
-    // const searchedEvents = searchInputValue !== '' ? 
-    // filter.filter(event => event.title.toLowerCase().includes(searchInputValue.toLowerCase()))
-    // : events
     
     function pad (value) {
         return String(value).padStart(2, '0')
