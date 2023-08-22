@@ -254,20 +254,33 @@ export const PriorityListItem = styled.div`
 `;
 
 export const DownloadImageBtn = styled.button`
-display: block;
-width: 100%;
-margin-bottom: 20px;
-height: ${(props) => !props.desc ? '56px' : '156px'};
-padding: 16px 12px 16px 12px;
-border: 1px solid black;
-border-radius: 8px;
-color: ${p => p.theme.colors.primaryText};
-border-color: ${p => p.theme.colors.primaryText};
-box-sizing: border-box;
-font-weight: ${p => p.theme.fontWaight.regular};
-font-size: ${p => p.theme.fontSizes.subtitleSize};
-background-color: ${p => p.theme.colors.white};
-text-align: start;
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    height: ${(props) => !props.desc ? '56px' : '156px'};
+    padding: 16px 12px 16px 12px;
+    border: 1px solid black;
+    border-radius: 8px;
+    color: ${p => p.theme.colors.primaryText};
+    border-color: ${p => p.theme.colors.primaryText};
+    box-sizing: border-box;
+    font-weight: ${p => p.theme.fontWaight.regular};
+    font-size: ${p => p.theme.fontSizes.subtitleSize};
+    background-color: ${p => p.theme.colors.white};
+    text-align: start;
 `;
 
+export const ImageList = styled.ul`
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+    list-style: none;
+`;
+
+export const ImageItem = styled.li`
+    width: 250px;
+    height: 250px;
+    
+`;
 
