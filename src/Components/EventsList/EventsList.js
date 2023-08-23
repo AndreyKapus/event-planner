@@ -17,7 +17,6 @@ import { EventCard,
         MoreInfoBtn,
         EventList,
 } from './EventList.styled.js';
-import defaultImg from '../../Images/flowers.jpg';
 import { useFilter } from '../../Store/FileterStore.js';
 import { useSearch } from '../../Store/SearchStore.js';
 import { useEffect, useState } from 'react';
@@ -28,6 +27,8 @@ const EventsList = () => {
     const getCategory = useFilter(state => state.filter);
     const searchInputValue = useSearch(state => state.searchValue);
     const [filter, setFilter] = useState([])
+
+    // const avatar = useImage(state => state.avatarImage);
 
     const handleEventDetails = (id) => {
         setEventId(id);
@@ -61,7 +62,6 @@ const EventsList = () => {
     };
 
     console.log(events)
-
     return (
         <EventSection>
             <EventListTittle>My events</EventListTittle>
@@ -69,7 +69,7 @@ const EventsList = () => {
             {events && filter.map((event) => (
                     <EventCard key={event.id}>
                         <ImgWrapper className='imageWrapper'>
-                            <img src={defaultImg} alt='default'/>
+                            <img src={event.addPicture} alt='default'/>
                             <MeetInfoWrapper className='MeetInfoWrapper'>
                                 <MeetTimeWrapper>
                                     <MeetDate>{pad(event.date)}.{pad(event.year)}</MeetDate>

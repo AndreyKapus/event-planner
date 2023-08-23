@@ -1,4 +1,4 @@
-import { useState } from 'react';
+
 import Modal from 'react-modal';
 import avatarImages from '../../Colections/AvatarImages'
 import {ImageList, ImageItem} from './CreateEvent.styled';
@@ -14,21 +14,47 @@ const customStyles = {
   },
 };
 
-// Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement('body');
 
-const ImageModal = ({modalIsOpen, setIsOpen}) => {
-  let subtitle;
+const ImageModal = ({modalIsOpen, setIsOpen, setPicture}) => {
+
+const handleClick = (e) => {
+  const name = e.currentTarget.id;
   
+  switch(name) {
+    case 'business':
+      setPicture(e.target.src);
+      setIsOpen(false)
+    break;
 
-//   function openModal() {
-//     setIsOpen(true);
-//   }
+    case 'art':
+      setPicture(e.target.src);
+      setIsOpen(false);
+    break;
 
-//   function afterOpenModal() {
-//     // references are now sync'd and can be accessed.
-//     subtitle.style.color = '#f00';
-//   }
+    case 'sport':
+      setPicture(e.target.src);
+      setIsOpen(false);
+    break;
+
+    case 'music':
+      setPicture(e.target.src);
+      setIsOpen(false);
+    break;
+
+    case 'workshop':
+      setPicture(e.target.src);
+      setIsOpen(false);
+    break;
+
+    case 'conference':
+      setPicture(e.target.src);
+      setIsOpen(false);
+    break;
+
+    default: return
+  }
+} 
 
   function closeModal() {
     setIsOpen(false);
@@ -36,7 +62,6 @@ const ImageModal = ({modalIsOpen, setIsOpen}) => {
 
   return (
     <div>
-      {/* <button onClick={openModal}>Open Modal</button> */}
       <Modal
         isOpen={modalIsOpen}
         // onAfterOpen={afterOpenModal}
@@ -45,22 +70,22 @@ const ImageModal = ({modalIsOpen, setIsOpen}) => {
         contentLabel="Example Modal"
       >
         <ImageList>
-            <ImageItem onClick={(e) => console.log(e.target)}>
+            <ImageItem  id='business' onClick={handleClick} >
                 <img src={avatarImages.business} alt='business'/>
             </ImageItem>
-            <ImageItem onClick={(e) => console.log(e.target)}>
-                <img src={avatarImages.art} alt='art'/>
+            <ImageItem  id='art' onClick={handleClick} >
+                <img src={avatarImages.art} alt='art' />
             </ImageItem>
-            <ImageItem onClick={(e) => console.log(e.target)}>
+            <ImageItem id='sport' onClick={handleClick} >
                 <img src={avatarImages.sport} alt='sport'/>
             </ImageItem>
-            <ImageItem onClick={(e) => console.log(e.target)}>
-                <img src={avatarImages.music} alt='music'/>
+            <ImageItem id='music' onClick={handleClick}>
+                <img src={avatarImages.music} alt='music' />
             </ImageItem>
-            <ImageItem onClick={(e) => console.log(e.target)}>
-                <img src={avatarImages.workshop} alt='workshop'/>
+            <ImageItem id='workshop' onClick={handleClick}>
+                <img src={avatarImages.workshop} alt='workshop' />
             </ImageItem>
-            <ImageItem onClick={(e) => console.log(e.target)}>
+            <ImageItem  id='conference' onClick={handleClick}>
                 <img src={avatarImages.conference} alt='conference'/>
             </ImageItem>
         </ImageList>

@@ -23,13 +23,15 @@ const CreateEventForm = () => {
     const [time, setTime] = useState('');
     const [location, setLocation] = useState('');
     const [category, setCategory] = useState('');
-    const [picture, setPicture] = useState('');
+    const [picture, setPicture] = useState(null);
     const [priority, setPriority] = useState('');
     const [startDate, setStartDate] = useState(null);
+
 
     const navigate = useNavigate();
 
     const add = useEvents((state) => state.addEvent);
+
 
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -50,12 +52,8 @@ const CreateEventForm = () => {
             case 'category':
                 setCategory(value);
             break;
-            case 'picture':
-                setPicture(value);
-            break;
             case 'priority':
                 setPriority(value);
-                console.log(value);
             break;
 
             default: return
@@ -113,7 +111,7 @@ const CreateEventForm = () => {
                     </div>
 
                     <div className="picture">
-                        <ImageDownload handleChange={handleChange}/>
+                        <ImageDownload handleChange={handleChange} setPicture={setPicture}/>
                         {/* <FormLabel  htmlFor='picture'>Add picture</FormLabel>
                         <FormInput disabled type='text' name="picture" id="picture" onChange={handleChange}/> */}
                     </div>
