@@ -32,7 +32,7 @@ export const ContainerWrapper = styled.div`
     height: 100vh;
     background-image: url(${background});
     background-size: cover;
-    background-repeat: no-repeat;
+
 `;
 
 export const HeaderContainer = styled.div`
