@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 
 export const EventPageErapper = styled.div`
-    margin-top: 64px;
+    margin-top: 0px;
 `;
 
 export const EventContainer = styled.div`
 @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
-    width: 688px;
+    width: 628px;
     height: auto;
     margin-left: auto;
     margin-right: auto;
@@ -19,20 +19,20 @@ export const EventContainer = styled.div`
 `;
 
 export const ControlsWrapper = styled.div`
-    margin-top: 16px;
-    padding-left: 24px;
-    padding-right: 24px;
-    padding-bottom: 70px;
+        padding-top: 24px;
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-bottom: 70px;
 
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
-        margin-top: 24px;
+        padding-top: 24px;
         padding-left: 24px;
         padding-right: 24px;
         padding-bottom: 70px;
     };
 
     @media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
-        margin-top: 20px;
+        padding-top: 24px;
         padding-left: 40px;
         padding-right: 40px;
         padding-bottom: 70px;
@@ -54,19 +54,32 @@ export const EventTitle = styled.h3`
 `;
 
 export const Image = styled.div`
+    width: 100%;
+    height: 168px;
+   
+    overflow: hidden;
     margin-top: 24px;
     border-radius: 8px;
+
+    @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
+        width: 100%;
+        height: 272px;
+    };
+
+    @media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
+        width: 100%;
+    };
 `;
 
 export const DescriptionWrapper = styled.div`
-
+    
 `;
 
 export const DescriptionContainer = styled.div`
+
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
         display: flex;
         align-items: center;
-        margin-top: 24px;
 };
 `;
 
@@ -85,11 +98,10 @@ export const DetailsList = styled.ul`
     margin-bottom: 40px;
 
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
-        margin-top: 0px;
     };
 
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
-        margin-bottom: 24px;
+        margin-bottom: 40px;
     };
 `;
 

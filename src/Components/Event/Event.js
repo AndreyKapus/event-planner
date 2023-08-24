@@ -43,7 +43,7 @@ const Event = () => {
                     <EventTitle>{singleEvent.title}</EventTitle>
                     <EventWrapper>
                         <Image>
-                            <img src={defaultImage} alt='default'/>
+                            <img src={singleEvent.addPicture} alt='default'/>
                         </Image>
                        <ControlsWrapper>
                             <DescriptionWrapper>
