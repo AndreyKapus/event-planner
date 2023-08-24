@@ -1,7 +1,9 @@
 import styled from '@emotion/styled'
 import background from '../src/Images/background.jpg'
 
-export const Container = styled.div`
+
+
+export const MainContainer = styled.div`
 box-sizing: border-box;
 width: 100%;
 padding-left: 20px;
@@ -11,8 +13,6 @@ width: ${p => p.theme.screens.mobWidth};
 margin-left: auto;
 margin-right: auto;
 padding-bottom: 24px;
-
-
 
 @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
     width: ${p => p.theme.screens.tabWidth};
@@ -29,15 +29,16 @@ padding-bottom: 24px;
 
 export const ContainerWrapper = styled.div`
     padding-top: 64px;
+    height: 100vh;
     background-image: url(${background});
-    background-size: 100% auto;
+    background-size: cover;
+    background-repeat: no-repeat;
 `;
 
 export const HeaderContainer = styled.div`
 &::after {
     content: " ";
     position: absolute;
-    width: 100%;
     left: 0px;
     right: 0px;
     top: 168px;

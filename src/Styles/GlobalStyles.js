@@ -10,6 +10,8 @@ export const GlobalStyles = css`
 }
 
 body {
+  width: 100%;
+  height: 100%;
   font-family: Poppins;
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -39,16 +41,16 @@ img {
 };
 `;
 
-export const Container = styled.div`
-// width: ${p => p.theme.screens.mobWidth};
-// margin-left: auto;
-// margin-right: auto;
+// export const Container = styled.div`
+// // width: ${p => p.theme.screens.mobWidth};
+// // margin-left: auto;
+// // margin-right: auto;
 
-// @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
-//     width: ${p => p.theme.screens.tabWidth};
-// };
+// // @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
+// //     width: ${p => p.theme.screens.tabWidth};
+// // };
 
-// @media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
-//     width: ${p => p.theme.screens.deskWidth};
-// };
-`;
+// // @media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
+// //     width: ${p => p.theme.screens.deskWidth};
+// // };
+// `;

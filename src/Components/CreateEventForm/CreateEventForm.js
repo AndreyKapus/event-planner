@@ -17,13 +17,15 @@ import GoBackBtn from "../GoBack/GoBack";
 import PriorityDrop from "./PriorityDrop";
 import CategoryDrop from "./CategoryDrop";
 import ImageDownload from "./ImageDownload";
+import defaultImage from '../../Images/defaultImg.jpg'
+
 const CreateEventForm = () => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [time, setTime] = useState('');
     const [location, setLocation] = useState('');
     const [category, setCategory] = useState('');
-    const [picture, setPicture] = useState(null);
+    const [picture, setPicture] = useState(defaultImage);
     const [priority, setPriority] = useState('');
     const [startDate, setStartDate] = useState(null);
 
