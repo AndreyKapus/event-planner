@@ -7,12 +7,16 @@ import { initReactI18next } from "react-i18next";
 const resources = {
   en: {
     translation: {
-      "title": "Event planner"
+      "title": "Event planner",
+      "my-events": "My events",
+      "more-info": "More info"
   }
   },
   ua: {
     translation: {
-      "title": "Планувальник подій"
+      "title": "Планувальник подій",
+      "my-events": "Мої події",
+      "more-info": "Детальніше..."
   }
   }
 };

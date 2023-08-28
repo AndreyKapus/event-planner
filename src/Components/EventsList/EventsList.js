@@ -20,6 +20,7 @@ import { EventCard,
 import { useFilter } from '../../Store/FileterStore.js';
 import { useSearch } from '../../Store/SearchStore.js';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const EventsList = () => {
     const events = useEvents(state => state.events);
@@ -27,6 +28,8 @@ const EventsList = () => {
     const getCategory = useFilter(state => state.filter);
     const searchInputValue = useSearch(state => state.searchValue);
     const [filter, setFilter] = useState([])
+
+    const {t, i18n} = useTranslation();
 
     // const avatar = useImage(state => state.avatarImage);
 
@@ -64,7 +67,7 @@ const EventsList = () => {
     console.log(events)
     return (
         <EventSection>
-            <EventListTittle>My events</EventListTittle>
+            <EventListTittle>{t('my-events')}</EventListTittle>
             <EventList>
             {events && filter.map((event) => (
                     <EventCard key={event.id}>
@@ -92,7 +95,7 @@ const EventsList = () => {
                             className='more' 
                             type='button' 
                             onClick={() => handleEventDetails(event.id)}>
-                            More info
+                            {t('more-info')}
                         </MoreInfoBtn>
                     </EventCard>
             ))}
