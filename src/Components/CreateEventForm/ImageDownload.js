@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FormLabel, DownloadImageBtn } from "./CreateEvent.styled";
 import ImageModal from "./ImageModal";
 
-const ImageDownload = ({handleChange, setPicture}) => {
+const ImageDownload = ({setPicture}) => {
     const [modalIsOpen, setIsOpen] = useState(false);
 
     const handleClick = () => {

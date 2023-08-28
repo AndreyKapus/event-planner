@@ -56,7 +56,7 @@ export const Title = styled(NavLink)`
     };
 `;
 
-export const Select = styled.select`
+export const Select = styled.div`
     padding: 12px;
     border: none;
     border-radius: 8px;
@@ -64,6 +64,7 @@ export const Select = styled.select`
     font-size: ${p => p.theme.fontSizes.subtitleSize};
     font-weight: ${p => p.theme.fontWaight.medium};
     color: ${p => p.theme.colors.secondaryText};
+    z-index: 1;
 
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
         position: absolute;
@@ -75,7 +76,7 @@ export const Select = styled.select`
     };
 `;
 
-export const Options = styled.option`
+export const Options = styled.button`
     font-size: ${p => p.theme.fontSizes.subtitleSize};
     font-weight: ${p => p.theme.fontWaight.medium};
     color: ${p => p.theme.colors.primaryText};
