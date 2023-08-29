@@ -14,13 +14,12 @@ import {EventPageErapper,
         ControlsWrapper,
         DeleteEventBtn,
 } from './Event.styled'
-import defaultImage from '../../Images/flowers-ultra.jpg'
 import { useNavigate } from 'react-router-dom';
 
 const Event = () => {
     let singleEvent = {}
     const events = useEvents((state) => state.events);
-    const id = useId(state => state.id);
+    const id = useId((state) => state.id);
     const deletEv = useEvents((state) => state.deleteEvent);
 
     const navigate = useNavigate();

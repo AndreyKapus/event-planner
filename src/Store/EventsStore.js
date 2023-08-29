@@ -36,6 +36,10 @@ export const useEvents = create(devtools(persist((set, get) => ({
 
   export const useId = create(set => ({
     id: '',
-    setId: (value) => set({id: value}),
-    setInitialId: () => ({id: ''}),
+    setId: (value) => set({
+        id: value
+    }),
+    setInitialId: () => ({
+        id: ''
+    }),
   }));

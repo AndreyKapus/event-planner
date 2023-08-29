@@ -56,8 +56,7 @@ export const Title = styled(NavLink)`
     };
 `;
 
-export const Select = styled.div`
-    padding: 12px;
+export const SelectWrapper = styled.div`
     border: none;
     border-radius: 8px;
     box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
@@ -76,10 +75,33 @@ export const Select = styled.div`
     };
 `;
 
-export const Options = styled.button`
+export const SelectBtn = styled.div`
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
+    font-size: ${p => p.theme.fontSizes.subtitleSize};
+    font-weight: ${p => p.theme.fontWaight.medium};
+    color: ${p => p.theme.colors.secondaryText};
+    cursor: pointer;
+`;
+
+export const OptionsWrapper = styled.div`
+    border: none;
+    box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
+    margin-top: 5px;
+`;
+
+export const Options = styled.div`
+    padding: 10px;
     font-size: ${p => p.theme.fontSizes.subtitleSize};
     font-weight: ${p => p.theme.fontWaight.medium};
     color: ${p => p.theme.colors.primaryText};
+    background-color: ${p => p.theme.colors.white};
+    cursor: pointer;
+    &:not(:last-child) {
+        border-bottom: 1px solid #ACA7C3;
+    };
 `;
 
 export const Input = styled.input`
