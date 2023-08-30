@@ -29,7 +29,7 @@ const EventsList = () => {
     const searchInputValue = useSearch(state => state.searchValue);
     const [filter, setFilter] = useState([])
 
-    const {t, i18n} = useTranslation();
+    const {t} = useTranslation();
 
     // const avatar = useImage(state => state.avatarImage);
 
@@ -64,7 +64,6 @@ const EventsList = () => {
         return String(value).padStart(2, '0')
     };
 
-    console.log(events)
     return (
         <EventSection>
             <EventListTittle>{t('my-events')}</EventListTittle>

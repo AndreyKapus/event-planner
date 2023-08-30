@@ -10,12 +10,26 @@ import {Dropdown,
         BtnContentText,
 } from './FilterButton.styled.js'
 import { useFilter } from '../../../Store/FileterStore';
+import { useLang } from '../../../Store/LanguegeStore';
+import { useEffect } from 'react';
 
-const filterOptions = ['Art', 'Music', 'Business', 'Conference', 'Workshop', 'Sport']
+const filterOptions = ['Art', 'Music', 'Business', 'Conference', 'Workshop', 'Sport'];
 
 const FilterIcon = ({toggleFilterOpen, isFilterOpen, setIsFilterOpen}) => {
     const [selectCategory, setSelectedCategory] = useState('Category');
-    const setCategory = useFilter((state) => state.setCategoryFilter)
+    const setCategory = useFilter((state) => state.setCategoryFilter);
+    const getLeng = useLang((state) => state.lang);
+
+    console.log(getLeng)
+
+    useEffect(() => {
+        if(getLeng === 'en') {
+            setSelectedCategory('Category')
+        };
+        if(getLeng === 'ua') {
+            setSelectedCategory('Категорія')
+        }
+    }, [getLeng])
 
     const handleCategoryChange = (option) => {
         setSelectedCategory(option);

@@ -18,6 +18,7 @@ import PriorityDrop from "./PriorityDrop";
 import CategoryDrop from "./CategoryDrop";
 import ImageDownload from "./ImageDownload";
 import defaultImage from '../../Images/defaultImg.jpg'
+import { useTranslation } from "react-i18next";
 
 const CreateEventForm = () => {
     const [title, setTitle] = useState('');
@@ -28,6 +29,8 @@ const CreateEventForm = () => {
     const [picture, setPicture] = useState(defaultImage);
     const [priority, setPriority] = useState('');
     const [startDate, setStartDate] = useState(null);
+
+    const {t} = useTranslation();
 
 
     const navigate = useNavigate();
@@ -72,20 +75,20 @@ const CreateEventForm = () => {
     return(
         <CreateEventWrapper>
             <GoBackBtn/>
-            <CreateEventTitle>Create new event</CreateEventTitle>
+            <CreateEventTitle>{t('create-event')}</CreateEventTitle>
             <Form onSubmit={handleSubmit}>
                     <div className="title">
-                        <FormLabel htmlFor='title'>Title</FormLabel>
+                        <FormLabel htmlFor='title'>{t("create-event-title")}</FormLabel>
                         <FormInput type='text' name="title" id='title' onChange={handleChange}/>
                     </div>
 
                     <div className="description">
-                        <FormLabel htmlFor='description'>Description</FormLabel>
+                        <FormLabel htmlFor='description'>{t("create-event-description")}</FormLabel>
                         <Textarea type='text' name="description" id='description' desc onChange={handleChange}/>
                     </div>
 
                     <DatePickerWrapper className="date">
-                        <FormLabel htmlFor='date'>Select date</FormLabel>
+                        <FormLabel htmlFor='date'>{t("create-event-date")}</FormLabel>
                         <DatePicker className="date-picker"
                             calendarClassName="calendar" 
                             autocomplete="off"
@@ -98,13 +101,13 @@ const CreateEventForm = () => {
                     </DatePickerWrapper>
 
                     <DatePickerWrapper className="time">
-                        <FormLabel htmlFor='time' >Select time</FormLabel>
+                        <FormLabel htmlFor='time' >{t("create-event-time")}</FormLabel>
                         <FormInput type='time' name="time" id="time" onChange={handleChange}/>
                         <SelectDown/>
                     </DatePickerWrapper>
 
                     <div className="location">
-                        <FormLabel htmlFor='location'>Location</FormLabel>
+                        <FormLabel htmlFor='location'>{t("create-event-location")}</FormLabel>
                         <FormInput type='text' name="location" id="location" onChange={handleChange}/>
                     </div>
 
@@ -114,15 +117,13 @@ const CreateEventForm = () => {
 
                     <div className="picture">
                         <ImageDownload handleChange={handleChange} setPicture={setPicture}/>
-                        {/* <FormLabel  htmlFor='picture'>Add picture</FormLabel>
-                        <FormInput disabled type='text' name="picture" id="picture" onChange={handleChange}/> */}
                     </div>
 
                     <div className="priority">
                         <PriorityDrop priority={priority} setPriority={setPriority}/>
                     </div>
 
-                    <AddBtn type="submit" className="addBtn">Add event</AddBtn>
+                    <AddBtn type="submit" className="addBtn">{t("create-event-btn")}</AddBtn>
             </Form>
         </CreateEventWrapper>
     )

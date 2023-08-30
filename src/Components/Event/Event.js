@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import {useEvents} from '../../Store/EventsStore.js'
 import { useId } from '../../Store/EventsStore.js';
 import GoBackBtn from '../GoBack/GoBack.js';
@@ -21,6 +22,8 @@ const Event = () => {
     const events = useEvents((state) => state.events);
     const id = useId((state) => state.id);
     const deletEv = useEvents((state) => state.deleteEvent);
+
+    const {t} = useTranslation()
 
     const navigate = useNavigate();
     
@@ -56,7 +59,7 @@ const Event = () => {
                                     </DetailsList>
                                 </DescriptionContainer>
                             </DescriptionWrapper>
-                            <DeleteEventBtn type='button' onClick={() => handleDelete(singleEvent.id)}>Delete event</DeleteEventBtn>
+                            <DeleteEventBtn type='button' onClick={() => handleDelete(singleEvent.id)}>{t("delete-event")}</DeleteEventBtn>
                        </ControlsWrapper>
                        
                     </EventWrapper>

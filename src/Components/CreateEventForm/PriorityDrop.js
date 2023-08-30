@@ -1,10 +1,21 @@
 import { useState } from "react";
 import { PriorityDropWrapper, PriorityList, PriorityListItem } from "./CreateEvent.styled";
 import { FormLabel, FormInput } from "./CreateEvent.styled";
+import { useTranslation } from "react-i18next";
+import { useLang } from "../../Store/LanguegeStore";
+import { useEffect } from "react";
 
 const PriorityDrop = ({setPriority, handleChange}) => {
     const [priorityInputOnFocus, setPriorityInputOnFocus] = useState(false);
     const [selectedPriority, setSelectedPriority] = useState('Select priority');
+
+    const getLang = useLang((state) => state.lang);
+
+    useEffect(() => {
+        getLang === 'en' ? setSelectedPriority('Select priority') : setSelectedPriority('Оберіть пріорітет')
+    }, [getLang])
+
+    const {t} = useTranslation()
 
     const options = ['Low', 'Medium', 'High'];
 
@@ -16,7 +27,7 @@ const PriorityDrop = ({setPriority, handleChange}) => {
     
     return (
         <div>
-            <FormLabel htmlFor='priority'>Priority</FormLabel>  
+            <FormLabel htmlFor='priority'>{t("create-event-priority")}</FormLabel>  
                 <FormInput type='text' 
                     readOnly
                     value={selectedPriority}
