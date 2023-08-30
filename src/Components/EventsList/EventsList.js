@@ -27,11 +27,9 @@ const EventsList = () => {
     const setEventId = useId((state) => state.setId);
     const getCategory = useFilter(state => state.filter);
     const searchInputValue = useSearch(state => state.searchValue);
-    const [filter, setFilter] = useState([])
+    const [filter, setFilter] = useState([]);
 
     const {t} = useTranslation();
-
-    // const avatar = useImage(state => state.avatarImage);
 
     const handleEventDetails = (id) => {
         setEventId(id);

@@ -15,7 +15,9 @@ const SearchInput = () => {
 
     return (
         <InputWrapper>
-            <IconWrapper><IconSearch/></IconWrapper>
+            <IconWrapper>
+                <IconSearch/>
+            </IconWrapper>
             <Input type="text" placeholder="Search by keywords" onChange={handleInputChange}/> 
         </InputWrapper>
     )

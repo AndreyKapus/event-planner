@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
-import background from '../../Images/background.jpg'
 
 export const Container = styled.header`
     box-sizing: border-box;
@@ -57,6 +56,7 @@ export const Title = styled(NavLink)`
 `;
 
 export const SelectWrapper = styled.div`
+    position: relative;
     border: none;
     border-radius: 8px;
     box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
@@ -87,9 +87,13 @@ export const SelectBtn = styled.div`
 `;
 
 export const OptionsWrapper = styled.div`
+    position: absolute;
+    top: 110%;
+    width: 100%;
     border: none;
     box-shadow: 2px 4px 9px 0px rgba(166, 141, 174, 0.28);
-    margin-top: 5px;
+    border-radius: 8px;
+    background-color: ${p => p.theme.colors.white};
 `;
 
 export const Options = styled.div`
@@ -97,15 +101,20 @@ export const Options = styled.div`
     font-size: ${p => p.theme.fontSizes.subtitleSize};
     font-weight: ${p => p.theme.fontWaight.medium};
     color: ${p => p.theme.colors.primaryText};
-    background-color: ${p => p.theme.colors.white};
     cursor: pointer;
     &:not(:last-child) {
         border-bottom: 1px solid #ACA7C3;
     };
 `;
 
+export const InputWrapper = styled.div`
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+`;
+
 export const Input = styled.input`
-    width: 260px;
+    width: calc(100% - 50px);
     height: 48px;
     margin-top: 24px;
     border: none;
@@ -124,15 +133,11 @@ export const Input = styled.input`
     };
 `;
 
-export const InputWrapper = styled.div`
-    box-sizing: border-box;
-    position: relative;
-`
-
 export const IconWrapper = styled.span`
     position: absolute;
     top: 50%;
     left: 12px;
+    pointer-events: none;
 
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
         top: 12px;
