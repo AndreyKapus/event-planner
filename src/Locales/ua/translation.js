@@ -16,4 +16,7 @@ export const ua = {
     "create-event-btn": "Додати подію",
     "go-back": "Назад",
     "delete-event": "Видалити подію",
+    "at": "о",
+    "select-date": "Обрати",
+    "search-input": "Шукати по імені"
 }

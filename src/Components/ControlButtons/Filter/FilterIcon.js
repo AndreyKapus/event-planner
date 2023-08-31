@@ -17,6 +17,7 @@ const filterOptions = ['Art', 'Music', 'Business', 'Conference', 'Workshop', 'Sp
 
 const FilterIcon = ({toggleFilterOpen, isFilterOpen, setIsFilterOpen}) => {
     const [selectCategory, setSelectedCategory] = useState('Category');
+    
     const setCategory = useFilter((state) => state.setCategoryFilter);
     const getLeng = useLang((state) => state.lang);
 

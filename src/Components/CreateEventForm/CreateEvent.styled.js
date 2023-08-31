@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 
 export const CreateEventWrapper = styled.div`
-    margin-top: 64px;
 `;
 
 export const CreateEventTitle = styled.h3`

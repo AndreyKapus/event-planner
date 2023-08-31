@@ -11,7 +11,7 @@ import ArrowUpIcon from '../../../Icons/ArrowUp';
 import { useSort } from '../../../Store/SortStore';
 import { useState } from 'react';
 
-const sortOptions = ['By category', 'By priority']
+const sortOptions = ['From low', 'From high']
 
 const SortBtn = ({toggleSortOpen, isSortOpen, isFilterOpen, setSortOpen}) => {
     const [sort, setSort] = useState('Sort by');
@@ -22,7 +22,7 @@ const SortBtn = ({toggleSortOpen, isSortOpen, isFilterOpen, setSortOpen}) => {
         sortFilter(option);
         setSortOpen(false);
         setSort(option)
-    }
+    };
     
     return (
         <Wrapper> 

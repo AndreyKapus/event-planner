@@ -32,11 +32,9 @@ const CreateEventForm = () => {
 
     const {t} = useTranslation();
 
-
     const navigate = useNavigate();
 
     const add = useEvents((state) => state.addEvent);
-
 
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -93,7 +91,7 @@ const CreateEventForm = () => {
                             calendarClassName="calendar" 
                             autocomplete="off"
                             dateFormat="yyyy/MM/dd"
-                            placeholderText="Select date"
+                            placeholderText={t("select-date")}
                             selected={startDate} 
                             onChange={(date) => setStartDate(date)} 
                             />

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import IconSearch from '../../Icons/IconSearch';
 import { useSearch } from '../../Store/SearchStore';
 import {
@@ -9,6 +10,8 @@ import {
 const SearchInput = () => {
     const setSearchInput = useSearch((state) => state.handleChange);
 
+    const {t} = useTranslation()
+
     const handleInputChange = (e) => {
         setSearchInput(e.target.value);
     };
@@ -18,7 +21,7 @@ const SearchInput = () => {
             <IconWrapper>
                 <IconSearch/>
             </IconWrapper>
-            <Input type="text" placeholder="Search by keywords" onChange={handleInputChange}/> 
+            <Input type="text" placeholder={t("search-input")} onChange={handleInputChange}/> 
         </InputWrapper>
     )
 };

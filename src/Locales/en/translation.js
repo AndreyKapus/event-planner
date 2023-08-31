@@ -16,4 +16,7 @@ export const en = {
     "create-event-btn": "Add event",
     "go-back": "Back",
     "delete-event": "Delete event",
+    "at": "at",
+    "select-date": "Select date",
+    "search-input": "Search by name"
 }

@@ -11,7 +11,7 @@ export const useEvents = create(devtools(persist((set, get) => ({
             title: title,
             description: description,
             date: startDate.getDate(),
-            year: startDate.getMonth(),
+            month: startDate.getMonth(),
             time: time,
             location: location,
             category: category,
