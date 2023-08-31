@@ -110,7 +110,7 @@ export const Options = styled.div`
 export const InputWrapper = styled.div`
     box-sizing: border-box;
     position: relative;
-    width: 100%;
+    
 `;
 
 export const Input = styled.input`

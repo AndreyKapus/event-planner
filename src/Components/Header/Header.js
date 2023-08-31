@@ -33,7 +33,6 @@ const Header = () => {
                         <Title to='/'>{t('title')}</Title>
                         <ChangeLanguege lang={lang} dropDownIsOpen={dropDownIsOpen} changeLanguage={changeLanguage} toggleDropDown={toggleDropDown}/>
                     </Wrapper>
-                   
                     <SearchInput/>
                 </HeaderWrapper>
                 <Outlet/>
