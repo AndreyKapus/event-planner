@@ -29,9 +29,9 @@ const EventsList = () => {
     const getCategory = useFilter(state => state.filter);
     const searchInputValue = useSearch(state => state.searchValue);
     const [filter, setFilter] = useState([]);
-    const [sorted, setSorted] = useState([]);
 
     const sortEvents = useSort(state => state.filter);
+    console.log(sortEvents)
 
     const {t} = useTranslation();
 
@@ -71,6 +71,7 @@ const EventsList = () => {
             const sortedFromLow = filter.sort((a, b) => (b.date, b.month) - (a.date, a.month));
             setFilter(sortedFromLow);
         };
+        setFilter(events)
 
     }, [events, filter, sortEvents])
     

@@ -21,7 +21,7 @@ const SortBtn = ({toggleSortOpen, isSortOpen, isFilterOpen, setSortOpen}) => {
     const handleSort = (option) => {
         sortFilter(option);
         setSortOpen(false);
-        setSort(option)
+        setSort(option);
     };
     
     return (
