@@ -18,5 +18,6 @@ export const en = {
     "delete-event": "Delete event",
     "at": "at",
     "select-date": "Select date",
-    "search-input": "Search by name"
+    "search-input": "Search by name",
+    "not-selected": "Not selected",
 }

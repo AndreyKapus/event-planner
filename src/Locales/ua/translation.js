@@ -18,5 +18,6 @@ export const ua = {
     "delete-event": "Видалити подію",
     "at": "о",
     "select-date": "Обрати",
-    "search-input": "Шукати по імені"
+    "search-input": "Шукати по імені",
+    "not-selected": "Не обрано",
 }

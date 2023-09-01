@@ -100,8 +100,8 @@ const EventsList = () => {
                             <EventText>{event.description}</EventText>
                         </EventDescrWrapper>
                         <StickersWrapper>
-                            <Sticker>{event.category ? event.category : 'Not selected'}</Sticker>
-                            <Sticker priority={event.priority}>{event.priority ? event.priority : 'Not selected'}</Sticker>
+                            <Sticker>{event.category ? event.category : <span>{t("not-selected")}</span>}</Sticker>
+                            <Sticker priority={event.priority}>{event.priority ? event.priority : <span>{t("not-selected")}</span>}</Sticker>
                         </StickersWrapper>
 
                         <MoreInfoBtn 

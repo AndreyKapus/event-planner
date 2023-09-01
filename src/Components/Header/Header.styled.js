@@ -14,17 +14,19 @@ export const Container = styled.header`
     margin-right: auto;
     
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
+        position: relative;
         width: ${p => p.theme.screens.tabWidth};
         padding-left: 40px;
         padding-right: 40px;
-
     };
     @media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
         width: ${p => p.theme.screens.deskWidth};
+        padding-left: 0px;
+        padding-right: 0px;
     };
     
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
-        position: relative;
+        
     };
 `;
 
@@ -65,7 +67,7 @@ export const SelectWrapper = styled.div`
 
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
         position: absolute;
-        right: 0px;
+        right: 40px;
     };
 
     @media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
@@ -123,11 +125,12 @@ export const Input = styled.input`
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
         width: 368px;
         margin-top: 0px;
-        margin-right: 40px;
+        margin-right: 60px;
     };
 
     @media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
         width: 410px;
+        margin-right: 60px;
     };
 `;
 

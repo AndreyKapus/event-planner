@@ -52,8 +52,8 @@ const Event = () => {
                                 <DescriptionText>{singleEvent.description}</DescriptionText>
                                 <DescriptionContainer>
                                     <DetailsList>
-                                        <DetailsItem>{singleEvent.category}</DetailsItem>
-                                        <DetailsItem>{singleEvent.priority}</DetailsItem>
+                                        <DetailsItem>{singleEvent.category ? singleEvent.category : <span>{t("not-selected")}</span>}</DetailsItem>
+                                        <DetailsItem>{singleEvent.priority ? singleEvent.priority : <span>{t("not-selected")}</span>}</DetailsItem>
                                         <DetailsItem>{singleEvent.location}</DetailsItem>
                                         <DetailsItem>{singleEvent.date} at {singleEvent.time}</DetailsItem> 
                                     </DetailsList>
