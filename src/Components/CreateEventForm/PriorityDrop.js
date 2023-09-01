@@ -28,7 +28,7 @@ const PriorityDrop = ({setPriority, handleChange}) => {
     return (
         <div>
             <FormLabel htmlFor='priority'>{t("create-event-priority")}</FormLabel>  
-                <FormInput type='text' 
+                <FormInput required type='text' 
                     readOnly
                     value={selectedPriority}
                     autoComplete="off"

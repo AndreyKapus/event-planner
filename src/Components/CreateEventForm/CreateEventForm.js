@@ -77,7 +77,7 @@ const CreateEventForm = () => {
             <Form onSubmit={handleSubmit}>
                     <div className="title">
                         <FormLabel htmlFor='title'>{t("create-event-title")}</FormLabel>
-                        <FormInput type='text' name="title" id='title' onChange={handleChange}/>
+                        <FormInput required type='text' name="title" id='title' onChange={handleChange}/>
                     </div>
 
                     <div className="description">
@@ -106,7 +106,7 @@ const CreateEventForm = () => {
 
                     <div className="location">
                         <FormLabel htmlFor='location'>{t("create-event-location")}</FormLabel>
-                        <FormInput type='text' name="location" id="location" onChange={handleChange}/>
+                        <FormInput required type='text' name="location" id="location" onChange={handleChange}/>
                     </div>
 
                     <div className="category">

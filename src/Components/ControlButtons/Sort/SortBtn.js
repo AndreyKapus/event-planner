@@ -7,16 +7,26 @@ import {SortBtnStyled,
         BtnContent,
         BtnContentText,
     } from './SortBy.styled'
-import ArrowUpIcon from '../../../Icons/ArrowUp';
 import { useSort } from '../../../Store/SortStore';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useLang } from '../../../Store/LanguegeStore';
 
-const sortOptions = ['From low', 'From high']
+const sortOptions = ['By date: from low', 'By date: from high']
 
 const SortBtn = ({toggleSortOpen, isSortOpen, isFilterOpen, setSortOpen}) => {
-    const [sort, setSort] = useState('Sort by');
+    const [sort, setSort] = useState('');
 
     const sortFilter = useSort((state) => state.setSortFilter);
+    const getLang = useLang((state) => state.lang)
+
+    useEffect(() => {
+        if(getLang === 'en') {
+            setSort('Sort')
+        };
+        if(getLang === 'ua') {
+            setSort('Сортувати')
+        }
+    }, [getLang])
 
     const handleSort = (option) => {
         sortFilter(option);
@@ -41,7 +51,6 @@ const SortBtn = ({toggleSortOpen, isSortOpen, isFilterOpen, setSortOpen}) => {
                             handleSort(option)
                         }}>
                             <DropListText>{option}</DropListText>
-                            <ArrowUpIcon/>
                         </DropListItem>
 ))}
                     </DropList>
