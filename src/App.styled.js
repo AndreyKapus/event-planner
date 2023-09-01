@@ -22,8 +22,8 @@ padding-bottom: 24px;
 
 @media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
     width: ${p => p.theme.screens.deskWidth};
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: 0px;
+    padding-right: 0px;
 };
 `;
 

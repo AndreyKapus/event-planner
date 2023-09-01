@@ -63,7 +63,7 @@ export const EventList = styled.ul`
 
 export const EventCard = styled.li`
     position: relative;
-    // width: 271px;
+    max-width: 272px;
     height: 480px;
     margin-top: 24px;
     margin-left: auto;
@@ -90,10 +90,10 @@ export const EventCard = styled.li`
     &:hover .MeetInfoWrapper {
         top: 200px;
         @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
-            top: 220px;
+            top: 240px;
             };
             @media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
-                top: 200px;
+                top: 210px;
                 };
     };
 
@@ -105,25 +105,25 @@ export const EventCard = styled.li`
         width: 280px;
 
         @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
-        top: 260px;
-        width: 332px;
+        top: 280px;
+        width: 334px;
         };
 
         @media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
-            top: 240px;
-            width: 262px;
+            top: 250px;
+            width: 302px;
             };
     };
 
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
-        width: auto;
+        max-width: 334px;
         margin-top: 0px;
         margin-left: 0px;
         margin-right: 0px;
         margin-bottom: 0px;
     };
     @media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
-        width: auto;
+        max-width: 302px;
         margin-top: 0px;
         margin-left: 0px;
         margin-right: 0px;
@@ -197,6 +197,7 @@ export const MeetTime = styled.p`
 
 export const MeetLocation = styled.p`
     padding-right: 16px;
+    overflow: hidden;
 `;
 
 export const EventDescrWrapper = styled.div`
@@ -210,6 +211,7 @@ export const EventTitle = styled.p`
     font-weight: ${p => p.theme.fontWaight.medium};
     font-size: ${p => p.theme.fontSizes.subtitleSize};
     color: ${p => p.theme.colors.titleColor};
+    overflow: hidden;
 `;
 
 export const EventText = styled.p`

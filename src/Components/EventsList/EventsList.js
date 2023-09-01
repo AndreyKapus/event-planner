@@ -92,7 +92,7 @@ const EventsList = () => {
                                     <MeetDate>{pad(event.date)}.{pad(event.month)}</MeetDate>
                                     <MeetTime>{t('at')} {event.time}</MeetTime>
                                 </MeetTimeWrapper>
-                                <MeetLocation>{event.location}</MeetLocation>
+                                    <MeetLocation>{event.location}</MeetLocation>         
                             </MeetInfoWrapper>
                         </ImgWrapper>
                         <EventDescrWrapper className='EventDescrWrapper'>

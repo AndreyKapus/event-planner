@@ -21,8 +21,6 @@ export const Container = styled.header`
     };
     @media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
         width: ${p => p.theme.screens.deskWidth};
-        padding-left: 80px;
-        padding-right: 80px;
     };
     
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
@@ -67,11 +65,11 @@ export const SelectWrapper = styled.div`
 
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
         position: absolute;
-        right: 40px;
+        right: 0px;
     };
 
     @media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
-        right: 80px;
+        right: 0px;
     };
 `;
 
@@ -125,7 +123,7 @@ export const Input = styled.input`
     @media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
         width: 368px;
         margin-top: 0px;
-        margin-right: 94px;
+        margin-right: 40px;
     };
 
     @media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
