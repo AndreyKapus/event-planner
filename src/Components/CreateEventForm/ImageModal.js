@@ -64,10 +64,9 @@ const handleClick = (e) => {
     <div>
       <Modal
         isOpen={modalIsOpen}
-        // onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         style={customStyles}
-        contentLabel="Example Modal"
+        contentLabel="select picture"
       >
         <ImageList>
             <ImageItem  id='business' onClick={handleClick} >

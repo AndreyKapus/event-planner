@@ -17,8 +17,8 @@ import GoBackBtn from "../GoBack/GoBack";
 import PriorityDrop from "./PriorityDrop";
 import CategoryDrop from "./CategoryDrop";
 import ImageDownload from "./ImageDownload";
-import defaultImage from '../../Images/defaultImg.jpg'
 import { useTranslation } from "react-i18next";
+import avatarImages from "../../Colections/AvatarImages";
 
 const CreateEventForm = () => {
     const [title, setTitle] = useState('');
@@ -26,7 +26,7 @@ const CreateEventForm = () => {
     const [time, setTime] = useState('');
     const [location, setLocation] = useState('');
     const [category, setCategory] = useState('');
-    const [picture, setPicture] = useState(defaultImage);
+    const [picture, setPicture] = useState(avatarImages.art);
     const [priority, setPriority] = useState('');
     const [startDate, setStartDate] = useState(null);
 
