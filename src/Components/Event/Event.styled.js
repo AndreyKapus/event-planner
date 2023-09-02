@@ -72,7 +72,6 @@ export const Image = styled.div`
 `;
 
 export const DescriptionWrapper = styled.div`
-    
 `;
 
 export const DescriptionContainer = styled.div`

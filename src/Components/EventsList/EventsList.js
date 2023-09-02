@@ -61,19 +61,19 @@ const EventsList = () => {
         setFilter(events)
     }, [events, getCategory, searchInputValue]) // eslint-disable-line react-hooks/exhaustive-deps
 
-    useEffect(() => {
-        if(sortEvents === 'From high') {
-            const sortedFromHigh = filter.sort((a, b) => (a.date, a.month) - (b.date, b.month));
-            setFilter(sortedFromHigh);
-        };
+    // useEffect(() => {
+    //     if(sortEvents === 'From high') {
+    //         const sortedFromHigh = filter.sort((a, b) => (a.date, a.month) - (b.date, b.month));
+    //         setFilter(sortedFromHigh);
+    //     };
 
-        if(sortEvents === 'From low') {
-            const sortedFromLow = filter.sort((a, b) => (b.date, b.month) - (a.date, a.month));
-            setFilter(sortedFromLow);
-        };
-        setFilter(events)
+    //     if(sortEvents === 'From low') {
+    //         const sortedFromLow = filter.sort((a, b) => (b.date, b.month) - (a.date, a.month));
+    //         setFilter(sortedFromLow);
+    //     };
+    //     setFilter(events)
 
-    }, [events, filter, sortEvents])
+    // }, [events, filter, sortEvents])
     
     function pad (value) {
         return String(value).padStart(2, '0')

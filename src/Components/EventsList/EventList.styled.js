@@ -4,6 +4,9 @@ import { NavLink } from "react-router-dom";
 
 export const EventSection = styled.section`
     margin-top: 40px;
+    @media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
+        margin-top: 0px;
+    };
 `;
 
 export const EventListTittle = styled.h2`
@@ -149,6 +152,7 @@ export const Sticker = styled.p`
     padding-left: 12px;
     font-weight: ${p => p.theme.fontWaight.medium};
     font-size: ${p => p.theme.fontSizes.textSize};
+    font-family: popins;
     color: ${(props) => {
         switch(props.priority) {
             case 'Low':

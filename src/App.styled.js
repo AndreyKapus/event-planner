@@ -1,8 +1,6 @@
 import styled from '@emotion/styled'
 import background from '../src/Images/background.jpg'
 
-
-
 export const MainContainer = styled.div`
 box-sizing: border-box;
 width: 100%;

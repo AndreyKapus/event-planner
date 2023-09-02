@@ -30,6 +30,12 @@ export const BtnContent = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
+        &:hover {
+        color: ${p => p.theme.colors.accent}
+    };
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: linear;
 `;
 
 export const BtnContentText = styled.p`

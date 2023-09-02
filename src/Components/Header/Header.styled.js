@@ -84,6 +84,12 @@ export const SelectBtn = styled.div`
     font-weight: ${p => p.theme.fontWaight.medium};
     color: ${p => p.theme.colors.secondaryText};
     cursor: pointer;
+        &:hover {
+        color: ${p => p.theme.colors.accent}
+    };
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: linear;
 `;
 
 export const OptionsWrapper = styled.div`
@@ -105,6 +111,12 @@ export const Options = styled.div`
     &:not(:last-child) {
         border-bottom: 1px solid #ACA7C3;
     };
+        &:hover {
+        color: ${p => p.theme.colors.accent}
+    };
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: linear;
 `;
 
 export const InputWrapper = styled.div`
