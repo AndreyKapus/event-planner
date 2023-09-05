@@ -32,7 +32,6 @@ const EventsList = () => {
   const [filter, setFilter] = useState([]);
 
   const sortEvents = useSort((state) => state.filter);
-  console.log(sortEvents);
 
   const { t } = useTranslation();
 
@@ -65,6 +64,18 @@ const EventsList = () => {
 
     setFilter(events);
   }, [events, getCategory, searchInputValue]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
+    if (sortEvents === "Date: from low") {
+      const sortedFromLow = events.sort((a, b) => a.date - b.date);
+      setFilter(sortedFromLow);
+    }
+
+    if (sortEvents === "Date: from high") {
+      const sortedFromHigh = events.sort((a, b) => b.date - a.date);
+      setFilter(sortedFromHigh);
+    }
+  }, [events, filter, sortEvents]);
 
   function pad(value) {
     return String(value).padStart(2, "0");
