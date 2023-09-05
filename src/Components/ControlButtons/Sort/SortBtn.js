@@ -12,7 +12,7 @@ import { useSort } from "../../../Store/SortStore";
 import { useEffect, useState } from "react";
 import { useLang } from "../../../Store/LanguegeStore";
 
-const sortOptions = ["Date: from low", "Date: from high"];
+const sortOptions = ["Date: low", "Date: high"];
 
 const SortBtn = ({ toggleSortOpen, isSortOpen, isFilterOpen, setSortOpen }) => {
   const [sort, setSort] = useState("");

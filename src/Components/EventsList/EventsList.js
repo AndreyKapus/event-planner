@@ -66,12 +66,12 @@ const EventsList = () => {
   }, [events, getCategory, searchInputValue]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
-    if (sortEvents === "Date: from low") {
+    if (sortEvents === "Date: low") {
       const sortedFromLow = events.sort((a, b) => a.date - b.date);
       setFilter(sortedFromLow);
     }
 
-    if (sortEvents === "Date: from high") {
+    if (sortEvents === "Date: high") {
       const sortedFromHigh = events.sort((a, b) => b.date - a.date);
       setFilter(sortedFromHigh);
     }
