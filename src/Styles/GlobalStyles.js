@@ -1,44 +1,43 @@
-import { css } from '@emotion/react';
-import styled from '@emotion/styled'
+import { css } from "@emotion/react";
 
 export const GlobalStyles = css`
-@import-normalize;
+  @import-normalize;
 
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-body {
-  width: 100%;
-  height: 100%;
-  font-family: Poppins;
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-};
+  body {
+    width: 100%;
+    height: 100%;
+    font-family: Poppins;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin: 0;
-};
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+  }
 
-ul,
-ol {
-  margin: 0;
-  padding: 0;
-};
+  ul,
+  ol {
+    margin: 0;
+    padding: 0;
+  }
 
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-};
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
 `;
 
 // export const Container = styled.div`
